@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -18,3 +18,157 @@
   </li>
 </ul>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      1 de 3
+    </div>
+    <div class="col-sm">1 de 3</div>
+    <div class="col-sm"> 1 de 3</div>
+  </div>
+</div> -->
+<!-- <div class="jumbotron pl-0 pr-0" id="fondo-gradiente">
+ -->  
+  <!-- Comienzo del NavBar
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light">
+    <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">ASEP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mr-auto ml-auto text-center">
+        <a class="nav-item nav-link active"> Que es ?</a>
+        <a class="nav-item nav-link"  [routerLink]="['mision-vision']" [routerLinkActive]="['active']">Mision, Vision y Objetivos</a>
+        <a class="nav-item nav-link" [routerLink]="['jasep']">JASEP-IT</a>
+        <a class="nav-item nav-link" [routerLink]="['servicios']" [routerLinkActive]="['active']">Servicios</a>
+      </div>
+    </div>
+  </nav>
+   Fin del NavBar-->
+  <!-- Inicio de Cuerpo
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid text-center">
+      <h1 class="display-2">ASEP</h1>
+      <p class="lead"> Sigla que describe la relación entre las 3 disciplinas AUDITORIA DE SISTEMAS, SEGURIDAD DE LA INFORMACIÓN Y PERITAJE INFORMATICO. <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas y de la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar actividades vinculadas con el cumplimiento de estándares de seguridad.</p>
+    </div>
+  </div>
+  Fin de Cuerpo 
+  <router-outlet></router-outlet>
+  
+
+
+  Comienzo del Footer
+    <div class="container-fluid border-top" id="footer">
+      <div class="row">
+        <div class="col">
+            <h1 class="display-4">Asep</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>  
+    </div>
+   Fin del Footer
+
+</div>-->
+  <!--  Comienzo del NavBar -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-light">
+    <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">ASEP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mr-auto ml-auto text-center">
+        <a data-scroll href="#que-es" class="nav-item nav-link"> Que es ?</a>
+        <a data-scroll href="#mision-vision" class="nav-item nav-link">Mision, Vision y Objetivos</a>
+        <a class="nav-item nav-link" [routerLink]="['jasep']">JASEP-IT</a>
+        <a class="nav-item nav-link" [routerLink]="['servicios']" [routerLinkActive]="['active']">Servicios</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Fin del NavBar -->
+  <!-- MENÚ -->
+<!--   <div class="container-fluid navbar-fixed-top">
+      <div class="row flex-items-xs-between menu-1 flex-items-xs-middle">
+        <div class="col-xs-2">
+          <a data-scroll href="#sec-1" class="btn btn-danger" role="button" aria-pressed="true">Sección-1</a>
+        </div>
+        <div class="col-xs-2">
+          <a data-scroll href="#sec-2" class="btn btn-danger" role="button" aria-pressed="true">Sección-2</a>
+        </div>
+        <div class="col-xs-2">
+          <a data-scroll href="#sec-3" class="btn btn-danger" role="button" aria-pressed="true">Sección-3</a>
+        </div>
+        <div class="col-xs-2">
+          <a data-scroll href="#sec-4" class="btn btn-danger" role="button" aria-pressed="true">Sección-4</a>
+        </div>
+      </div>
+    </div> -->
+    <!-- FIN MENU -->
+    
+    <!-- SECCIÓN 1 -->
+    <div class="container-fluid">
+      <div class="row slider-1 text-center pt-5" id="que-es" >
+        <div class="col mt-5">
+          <h1 class="mt-5">ASEP</h1>
+          <p class="lead">Sigla que describe la relación entre las 3 disciplinas AUDITORIA DE SISTEMAS, SEGURIDAD DE LA INFORMACIÓN Y PERITAJE INFORMATICO.
+            <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas y de la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar actividades vinculadas con el cumplimiento de estándares de seguridad.
+            <br>ASEP está enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación Tecnológica de la Universidad Tecnológica Nacional, Facultad Regional de Tucumán. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- FIN SECCIÓN -->
+
+    <!-- SECCIÓN 2 -->
+    <div class="container-fluid slider-2" id="mision-vision">
+          <div class="card-group">
+              <div class="card">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">MISION</h5>
+                  <p class="card-text">Trabajar en favor de la prevención y el desarrollo integral de la Seguridad Cibernética, a través de programas y proyectos que permitan convertirnos en aliados con Organismos Públicos y Privados.</p>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">VISION</h5>
+                  <p class="card-text">Ser reconocidos como un equipo de respuesta ante incidentes de seguridad cibernética (Computer Emergency Response Team).</p>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">VALORES</h5>
+                  <p class="card-text">Innovación permanente en procesos y servicios.
+                      <br> Trabajamos con Integridad y en equipo. 
+                      <br> Flexibilización y Adaptación al cambio.
+                      <br> Cumplimos lo que prometemos. 
+                      <br> Agregamos valor superando las expectativas.
+                  </p>
+                </div>
+              </div>
+            </div>
+    </div>
+    <!-- FIN SECCIÓN -->
+
+    <!-- SECCIÓN 3 -->
+    <div class="container-fluid slider-3" id="sec-3">
+        <div class="row">
+          <div class="col"><h1>Además de Flexbox</h1></div>
+        </div>
+    </div>
+    <!-- FIN SECCIÓN -->
+
+    <!-- SECCIÓN 4 -->
+    <div class="container-fluid slider-4" id="sec-4">
+        <div class="row">
+          <div class="col"><h1>Suscríbete en Youtube (bluuweb)</h1></div>
+        </div>
+    </div>
+    <!-- FIN SECCIÓN -->
+    
+    <!-- FOOTER -->
+    <div class="container-fluid footer">
+      <div><h6>Copyright © 2018 ASEP. Todos los Derechos Reservados. ASEP</h6></div>
+    </div>
+    <!-- FIN FOOTER -->
