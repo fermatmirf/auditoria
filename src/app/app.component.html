@@ -71,16 +71,16 @@
 </div>-->
   <!--  Comienzo del NavBar -->
   <nav class="navbar fixed-top navbar-expand-sm navbar-light">
-    <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">ASEP</a>
+    <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">LOGO ASEP</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav mr-auto ml-auto text-center">
-        <a data-scroll href="#que-es" class="nav-item nav-link"> Que es ?</a>
+        <a data-scroll href="#que-es" class="nav-item nav-link "> Que es ?</a>
         <a data-scroll href="#mision-vision" class="nav-item nav-link">Mision, Vision y Objetivos</a>
-        <a class="nav-item nav-link" [routerLink]="['jasep']">JASEP-IT</a>
-        <a class="nav-item nav-link" [routerLink]="['servicios']" [routerLinkActive]="['active']">Servicios</a>
+        <a data-scroll href="#jasep" class="nav-item nav-link" >JASEP-IT</a>
+        <a data-scroll href="#servicios" class="nav-item nav-link" >Servicios</a>
       </div>
     </div>
   </nav>
@@ -105,38 +105,45 @@
     <!-- FIN MENU -->
     
     <!-- SECCIÓN 1 -->
-    <div class="container-fluid">
-      <div class="row slider-1 text-center pt-5" id="que-es" >
-        <div class="col mt-5">
-          <h1 class="mt-5">ASEP</h1>
-          <p class="lead">Sigla que describe la relación entre las 3 disciplinas AUDITORIA DE SISTEMAS, SEGURIDAD DE LA INFORMACIÓN Y PERITAJE INFORMATICO.
-            <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas y de la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar actividades vinculadas con el cumplimiento de estándares de seguridad.
-            <br>ASEP está enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación Tecnológica de la Universidad Tecnológica Nacional, Facultad Regional de Tucumán. 
-          </p>
-        </div>
+    <div class="container-fluid slider-1 pb-0" id="que-es">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card card-image" id="imagen1">
+                  <div class="text-white text-center py-5 px-4 my-5">
+                      <div>
+                          <h1 class="card-title pt-3 mb-5 font-bold display-2"><strong>ASEP</strong></h1>
+                          <p class="mx-5 mb-5" id="parrafo1">Sigla que describe la relación entre las 3 disciplinas AUDITORIA DE SISTEMAS, SEGURIDAD DE LA INFORMACIÓN Y PERITAJE INFORMATICO.
+                              <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas y de la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar actividades vinculadas con el cumplimiento de estándares de seguridad.
+                              <br>ASEP está enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación Tecnológica de la Universidad Tecnológica Nacional, Facultad Regional de Tucumán. 
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
+
     </div>
     <!-- FIN SECCIÓN -->
 
     <!-- SECCIÓN 2 -->
-    <div class="container-fluid slider-2" id="mision-vision">
+    <div class="container-fluid slider-2 mt-0 pb-0" id="mision-vision">
           <div class="card-group">
               <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="../assets/images/apple-book-computer-desk-hand-iphone-laptop-looking-189906.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">MISION</h5>
                   <p class="card-text">Trabajar en favor de la prevención y el desarrollo integral de la Seguridad Cibernética, a través de programas y proyectos que permitan convertirnos en aliados con Organismos Públicos y Privados.</p>
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="../assets/images/depositphotos_106697094-stock-photo-workspace-desk-with-laptop-coffee.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">VISION</h5>
                   <p class="card-text">Ser reconocidos como un equipo de respuesta ante incidentes de seguridad cibernética (Computer Emergency Response Team).</p>
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="..." alt="Card image cap">
+                <img class="card-img-top" src="../assets/images/depositphotos_62299551-stock-photo-female-hand-with-pen-notebook.jpg" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">VALORES</h5>
                   <p class="card-text">Innovación permanente en procesos y servicios.
@@ -152,23 +159,141 @@
     <!-- FIN SECCIÓN -->
 
     <!-- SECCIÓN 3 -->
-    <div class="container-fluid slider-3" id="sec-3">
-        <div class="row">
-          <div class="col"><h1>Además de Flexbox</h1></div>
+    <div class="container-fluid slider-3" id="jasep">
+      <div class="row">
+        <div class="col-md-12" >
+            <div class="card card-image" id="imagen3">
+                <div class="text-white text-center py-5 px-4 my-5">
+                    <div>
+                        <h1 class="card-title pt-3 mb-5 font-bold display-2"><strong>JASEPIT - Jornada de Auditoría, Seguridad y Peritaje Informático</strong></h1>
+                        <p class="mx-5 mb-5" id="parrafo3">Jornada donde se invitan expertos locales, 
+                          nacionales e internacionales en las temáticas mencionadas para que compartan sus experiencias con asistentes de 
+                          las provincias del Norte Grande y de diferentes claustros (docente, no docente, estudiantes y graduados) así como 
+                          también aquellos que provienen de empresas públicas, privadas y público en general.
+                        </p>
+                        <a class="btn btn-outline-white btn-rounded"><i class="fa fa-clone left"></i> Ver Mas</a>
+                    </div>
+                </div>
+            </div>
         </div>
+      </div>
     </div>
     <!-- FIN SECCIÓN -->
 
     <!-- SECCIÓN 4 -->
-    <div class="container-fluid slider-4" id="sec-4">
+    <div class="container-fluid slider-4" id="servicios">
         <div class="row">
-          <div class="col"><h1>Suscríbete en Youtube (bluuweb)</h1></div>
+            <div class="col" >
+                <div class="card card-image" id="imagen4">
+                    <div class="text-white text-center py-5 px-4 my-5">
+                        <div>
+                            <h1 class="card-title pt-3 mb-5 font-bold display-2"><strong>Servicios</strong></h1>
+                            <p class="mx-5 mb-5" id="parrafo4">Ofrecer servicios y actividades de extensión y concientización a organizaciones públicas y privadas, así como también propuestas académicas y de investigación en las ramas de Auditoría, Seguridad y Peritaje Informático, y las complementarias Voto Electrónico y Gobernanza de Internet
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- FIN SECCIÓN -->
     
-    <!-- FOOTER -->
-    <div class="container-fluid footer">
-      <div><h6>Copyright © 2018 ASEP. Todos los Derechos Reservados. ASEP</h6></div>
+    <!-- Footer -->
+<footer class="page-footer font-small unique-color-dark" style="background: orangered">
+
+  <div style="background-color: #001957;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0 text-white">Siguenos en nuestras redes sociales!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fa-ic">
+            <fa name="fab fa-facebook text-white mr-4"></fa>          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <fa name="fab fa-twitter text-white mr-4"> </fa>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <fa name="fab fa-google-plus text-white mr-4"> </fa>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <fa name="fab fa-linkedin text-white mr-4"> </fa>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <fa name="fab fa-instagram text-white" > </fa>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
     </div>
-    <!-- FIN FOOTER -->
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5" >
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Asep-IT</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p></p>
+
+      </div>
+      <!-- Grid column -->
+
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contacto</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <fa name="fab fa-home mr-3"></fa> San Miguel de Tucuman, 4000, Tucuman</p>
+        <p>
+          <fa name="fab fa-envelope mr-3"></fa> info@example.com</p>
+        <p>
+          <fa name="fab fa-phone mr-3"></fa> + 0381</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">Copyright © 2018 ASEP. Todos los Derechos Reservados. ASEP
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<!-- <div> ANIMACION PIOLA
+  <fa name="fas fa-camera-retro" animation="spin"></fa></div>
+ -->

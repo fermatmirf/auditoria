@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { routing  } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { MisionVisonComponent } from './mision-vison/mision-vison.component';
@@ -22,7 +22,8 @@ import { InicioComponent } from './inicio/inicio.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,29 +1,46 @@
 *{
-    font-family:  MyriadProRegular;
+    
 }
 
 @font-face {
     font-family: MyriadProRegular;
     src: url(/assets/fonts/Myriad\ Pro\ Regular.ttf);
 }
+@font-face {
+    font-family: Goca;
+    src: url(/assets/fonts/GOCA\ LOGOTYPE\ BETA.ttf);
+}
+@font-face {
+    font-family: GeomanistRegularItalica ;
+    src: url(/assets/fonts/Geomanist-Regular&Italic/Webfont/Geomanist-Regular-Italic-Webfont/geomanist-regular-italic-webfont.ttf);
+}
+@font-face {
+    font-family: GeomanistRegular ;
+    src: url(/assets/fonts/Geomanist-Regular&Italic/Webfont/Geomanist-Regular-Webfont/geomanist-regular-webfont.ttf);
+}
+#que-es{
+    font-family: GeomanistRegularItalica;
+}
 .navbar{
-    background-color: rgba(255, 80, 41, 1)
+    background-color: rgba(255, 80, 41, 1);
+    font-family:  MyriadProRegular;
 }
 
 .navbar a{
-    border-radius: 100px;
     color: azure;
 }
 
 .slider-1, .slider-3, .slider-4{
 	height: 100vh;
-	text-align: center;
+    text-align: center;
+    font-family: GeomanistRegularItalica;
 }
 .slider-1{
     background: beige;
 }
 .slider-2{
-	background: #b80d57;
+    background: #b80d57;
+    font-family: GeomanistRegularItalica;
 }
 .slider-3{
 	background: #e03e36;
@@ -38,10 +55,35 @@
 	padding: 10px;
 }
 
+#imagen1, #imagen3, #imagen4{
+    height: 100vh;
+    background: rgba(191,28,28,1);
+    background: -moz-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(191,28,28,1)), color-stop(100%, rgba(24,35,97,1)));
+    background: -webkit-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
+    background: -o-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
+    background: -ms-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
+    background: linear-gradient(to right, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf1c1c', endColorstr='#182361', GradientType=1 );
+}
+#parrafo1, #parrafo3, #parrafo4{
+    font-size: 30px;
+}
+/*DEFINIENDO ANIMACIONES*/
 .navbar a:hover{
-   color: azure; 
-   border: #fff 1px solid;
-}
-.card:hover{
-    background: #b80d57;
-}
+    color: azure; 
+    background: rgba(4, 13, 85,0.51);
+    transition: all 1s ease;
+ }
+
+ #mision-vision .card-group .card:hover{
+    background: rgba(24,35,97,1);
+    transition: all 0.5s ease-in;
+
+ }
+
+ fa:hover{
+     padding: 0px;
+     background: white;
+     transition: all 0.2 ease;
+ }
