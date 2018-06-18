@@ -18,11 +18,9 @@
     font-family: GeomanistRegular ;
     src: url(/assets/fonts/Geomanist-Regular&Italic/Webfont/Geomanist-Regular-Webfont/geomanist-regular-webfont.ttf);
 }
-#que-es{
-    font-family: GeomanistRegularItalica;
-}
+
 .navbar{
-    background-color: rgba(255, 80, 41, 1);
+    background-color: rgba(255, 80, 41, 0.1);
     font-family:  MyriadProRegular;
 }
 
@@ -30,24 +28,7 @@
     color: azure;
 }
 
-.slider-1, .slider-3, .slider-4{
-	height: 100vh;
-    text-align: center;
-    font-family: GeomanistRegularItalica;
-}
-.slider-1{
-    background: beige;
-}
-.slider-2{
-    background: #b80d57;
-    font-family: GeomanistRegularItalica;
-}
-.slider-3{
-	background: #e03e36;
-}
-.slider-4{
-	background: #ff7c38;
-}
+
 .footer{
 	background: rgb(4, 13, 85);
 	color:#fff;
@@ -74,11 +55,5 @@
     color: azure; 
     background: rgba(4, 13, 85,0.51);
     transition: all 1s ease;
- }
-
- #mision-vision .card-group .card:hover{
-    background: rgba(24,35,97,1);
-    transition: all 0.5s ease-in;
-
  }
 

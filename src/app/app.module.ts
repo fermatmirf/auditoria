@@ -4,9 +4,12 @@ import { routing  } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+//Modulo custom
+import { AdministradorModule } from './administrador/administrador.module';
+//UserService
+import { UserService } from './services/user/user.service';
 
 import { AppComponent } from './app.component';
-import { MisionVisonComponent } from './mision-vison/mision-vison.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { InicioComponent } from './inicio/inicio.component';
 
@@ -14,18 +17,18 @@ import { InicioComponent } from './inicio/inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MisionVisonComponent,
     ServiciosComponent,
-    InicioComponent
+    InicioComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     routing,
+    AdministradorModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
