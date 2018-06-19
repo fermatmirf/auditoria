@@ -49,7 +49,9 @@ export class LoginComponent implements OnInit {
           console.log(errorMessage);
           if(errorMessage != null){
             this.status = 'error';
-          }          
+          }
+          this._router.navigate(['/admin/panel-admin']);
+          
      }
    );
   }
