@@ -4,12 +4,12 @@
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="identity">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="!identity">
     <div class="navbar-nav">
       <a class="nav-item nav-link" [routerLink]="['login']" [routerLinkActive]="['active']">Loguearse</a>
     </div>
   </div>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="!identity">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="identity">
     <div class="navbar-nav">
       <a class="nav-item nav-link" [routerLink]="['registrar-jornada']" [routerLinkActive]="['active']">Registrar Jornada</a>
       <a class="nav-item nav-link" [routerLink]="['listar-jornada']" [routerLinkActive]="['active']">Listar Jornada</a>

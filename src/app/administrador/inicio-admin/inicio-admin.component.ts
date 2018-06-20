@@ -15,20 +15,19 @@ export class InicioAdminComponent implements OnInit, DoCheck {
     private _router: Router,
     private _userService: UserService) { }
 
-  ngOnInit() {
-     this.identity = this._userService.getIdentity();
-    console.log(this.identity);
-  }
-
-  ngDoCheck(){
-    this.identity = this._userService.getIdentity();
-
-  }
-
-  logOut(){
-    localStorage.clear();
-    this.identity = null;
-    this._router.navigate(['admin']);
-
-  }
+    ngOnInit(){
+      this.identity = this._userService.getIdentity();
+      console.log(this.identity);
+    }
+  
+    ngDoCheck(){
+      this.identity = this._userService.getIdentity();
+    }
+  
+    logOut(){
+      localStorage.clear();
+      this.identity = null;
+      this._router.navigate(['admin']);
+  
+    }
 }

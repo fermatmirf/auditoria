@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-agregar-jornada',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agregar-jornada.component.css']
 })
 export class AgregarJornadaComponent implements OnInit {
+  public user: User;
+  public status: string;
 
-  constructor() { }
+  constructor(public userService: UserService) { }
 
   ngOnInit() {
   }
