@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user';
-import { UserService } from '../../services/user/user.service';
+import { Jornada } from '../../models/jornada';
+import { JornadaService } from '../../services/jornada/jornada.service';
 
 @Component({
   selector: 'app-agregar-jornada',
@@ -8,15 +8,17 @@ import { UserService } from '../../services/user/user.service';
   styleUrls: ['./agregar-jornada.component.css']
 })
 export class AgregarJornadaComponent implements OnInit {
-  public user: User;
+  public jornada: Jornada;
   public status: string;
 
-  constructor(public userService: UserService) { }
+  constructor(public jornadaService: JornadaService) {
+    this.jornada = new Jornada('',1,'','','','','');
+  }
 
   ngOnInit() {
   }
   onSubmit(registerForm):void{
-    this.userService.register(this.user).subscribe(
+    this.jornadaService.register(this.jornada).subscribe(
       (response) => {
         if(response.user && response.user._id){
           console.log(response.user);
@@ -30,5 +32,5 @@ export class AgregarJornadaComponent implements OnInit {
       (error) => {
         console.log(<any>error);
     });
-}
+  }
 }

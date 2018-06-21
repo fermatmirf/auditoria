@@ -1,20 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Asep-IT</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="!identity">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" [routerLink]="['login']" [routerLinkActive]="['active']">Loguearse</a>
+<div class="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Asep-IT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="!identity">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" [routerLink]="['login']" [routerLinkActive]="['active']">Loguearse</a>
+      </div>
     </div>
-  </div>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="identity">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" [routerLink]="['registrar-jornada']" [routerLinkActive]="['active']">Registrar Jornada</a>
-      <a class="nav-item nav-link" [routerLink]="['listar-jornada']" [routerLinkActive]="['active']">Listar Jornada</a>
-      <a class="nav-item nav-link" [routerLink]="['editar-jornada']" [routerLinkActive]="['active']">Editar Jornada</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" *ngIf="identity">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" [routerLink]="['registrar-jornada']" [routerLinkActive]="['active']">Registrar Jornada</a>
+        <a class="nav-item nav-link" [routerLink]="['listar-jornada']" [routerLinkActive]="['active']">Listar Jornada</a>
+        <a class="nav-item nav-link" [routerLink]="['editar-jornada']" [routerLinkActive]="['active']">Editar Jornada</a>
+        <a class="nav-item nav-link" (click)="logOut()">Cerrar Sesion</a>
+      </div>
     </div>
-  </div>
-</nav>
-<router-outlet></router-outlet>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

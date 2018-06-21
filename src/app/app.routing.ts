@@ -1,12 +1,13 @@
 import {Routes, RouterModule} from "@angular/router";
 import { ModuleWithProviders } from "@angular/core";
-import { ServiciosComponent } from "./servicios/servicios.component"
 import { InicioComponent } from "./inicio/inicio.component";
+import { JasepitComponent } from "./jasepit/jasepit.component";
 
 const routes:Routes = [
-	{path: '**', redirectTo: 'inicio' },
+	{path: '', component: InicioComponent},
+	{path: 'jasepit', component: JasepitComponent},
 	{path: 'inicio', component: InicioComponent},
-	{path: 'servicios', component: ServiciosComponent},
+	{path: '**', redirectTo: 'inicio'}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

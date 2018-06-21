@@ -16,7 +16,7 @@ export class InicioComponent implements OnInit {
   }
 
   verMas():void{
-    this._router.navigate(['/servicios']);
+    this._router.navigate(['jasepit']);
 
   }
 }

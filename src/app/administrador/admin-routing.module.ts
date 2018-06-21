@@ -13,9 +13,6 @@ const adminRoutes: Routes = [
         component: InicioAdminComponent,
         children: [
             {
-                path: '**', redirectTo: 'admin',
-            },
-            {
                 path: 'login', component: LoginComponent
             },
             {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AdminRoutingModule } from './admin-routing.module';
 
@@ -15,7 +16,8 @@ import { ListarJornadaComponent } from './listar-jornada/listar-jornada.componen
   imports: [
     CommonModule,
     FormsModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    AngularFontAwesomeModule
   ],
   declarations: [InicioAdminComponent, LoginComponent, PanelAdminComponent, AgregarJornadaComponent, EditarJornadaComponent, ListarJornadaComponent]
 })
