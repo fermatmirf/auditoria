@@ -12,7 +12,7 @@ export class AgregarJornadaComponent implements OnInit {
   public status: string;
 
   constructor(public jornadaService: JornadaService) {
-    this.jornada = new Jornada('',1,'','','','','');
+    this.jornada = new Jornada(1,'',1,'','','','','');
   }
 
   ngOnInit() {

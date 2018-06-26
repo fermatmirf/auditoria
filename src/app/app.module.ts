@@ -2,12 +2,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing  } from './app.routing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+//efectos
+import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll'; // <-- add
 //Modulos
 import { AdministradorModule } from './administrador/administrador.module';
 //Servicios
+import { UserGuard } from './services/user.guard';
 import { UserService } from './services/user/user.service';
 import { JornadaService } from './services/jornada/jornada.service';
 //Componentes
@@ -22,14 +26,16 @@ import { JasepitComponent } from './jasepit/jasepit.component';
     JasepitComponent
   ],
   imports: [
+    SimpleSmoothScrollModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     routing,
     AdministradorModule,
     AngularFontAwesomeModule
   ],
-  providers: [UserService,JornadaService],
+  providers: [UserService,JornadaService, UserGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

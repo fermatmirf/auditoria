@@ -1,20 +1,27 @@
 <!--  Comienzo del NavBar -->
 <nav class="navbar fixed-top navbar-expand-sm navbar-light">
-  <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">LOGO ASEP</a>
+  <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']"> <img class="img-fluid p-0 m-0" src="../../assets/images/logoasep.png" style="width: 180px; height: 50px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto ml-auto text-center">
-      <a data-scroll href="#que-es" class="nav-item nav-link que-es"> Que es ?</a>
-      <a data-scroll href="#mision-vision" class="nav-item nav-link">Mision, Vision y Objetivos</a>
-      <a data-scroll href="#jasep" class="nav-item nav-link">JASEP-IT</a>
-      <a data-scroll href="#servicios" class="nav-item nav-link">Servicios</a>
+      <a class="nav-item nav-link que-es"  SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Que es ?</a>
+      <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'mision-vision'" [duration]="500">Mision, Vision y Objetivos</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JASEP-IT</a>
+        <div class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" SimpleSmoothScroll [scrollTo]="'jasepit'" [duration]="500">Acerca de JASEP IT</a>
+          <a class="dropdown-item" (click)="verMas()">JASEP IT 2018</a>
+        </div>
+      </div>
+      <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'servicios'" [duration]="500">Servicios</a>
     </div>
   </div>
 </nav>
 <!-- Fin del NavBar -->
+
 <!-- SECCIÓN 1 -->
 <div class="container-fluid slider-1 pb-0" id="que-es">
   <div class="row">
@@ -80,7 +87,7 @@
 <!-- FIN SECCIÓN -->
 
 <!-- SECCIÓN 3 -->
-<div class="container-fluid slider-3" id="jasep">
+<div class="container-fluid slider-3" id="jasepit">
   <div class="row">
     <div class="col-md-12">
       <div class="card card-image" id="imagen3">

@@ -1,5 +1,6 @@
 export class Jornada {
     constructor(
+        public _id: number,
         public nombre: string,
         public anio: number,
         public sede: string,

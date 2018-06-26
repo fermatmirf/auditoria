@@ -1,11 +1,13 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute, Params} from '@angular/router'
 import { UserService } from '../../services/user/user.service';
+import { fadeAnimation } from '../animations';
 
 @Component({
   selector: 'app-inicio-admin',
   templateUrl: './inicio-admin.component.html',
-  styleUrls: ['./inicio-admin.component.css']
+  styleUrls: ['./inicio-admin.component.css'],
+  animations: [fadeAnimation]
 })
 export class InicioAdminComponent implements OnInit, DoCheck {
   public identity;

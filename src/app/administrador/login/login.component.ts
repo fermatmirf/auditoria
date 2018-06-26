@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
          //persistir token del usuario
          localStorage.setItem('token',this.token);
          //conseguir los contadores o estadisticas del usuario
-         this._router.navigate(['/admin/panel-admin']);
+         this._router.navigate(['admin/registrar-jornada']);
        }
       },
       error => {
