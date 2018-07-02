@@ -1,13 +1,15 @@
 <!--  Comienzo del NavBar -->
 <nav class="navbar fixed-top navbar-expand-sm navbar-light">
-  <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']"> <img class="img-fluid p-0 m-0" src="../../assets/images/logoasep.png" style="width: 180px; height: 50px;"></a>
+  <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">
+    <img class="img-fluid p-0 m-0" src="../../assets/images/logoasep.png" style="width: 180px; height: 50px;">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto ml-auto text-center">
-      <a class="nav-item nav-link que-es"  SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Que es ?</a>
+      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Que es ?</a>
       <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'mision-vision'" [duration]="500">Mision, Vision y Objetivos</a>
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JASEP-IT</a>
@@ -25,7 +27,7 @@
 <!-- SECCIÓN 1 -->
 <div class="container-fluid slider-1 pb-0" id="que-es">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col">
       <div class="card card-image" id="imagen1">
         <div class="text-white text-center py-5 px-4 my-5">
           <div>
@@ -43,6 +45,90 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="col pt-5">
+      <!--Accordion wrapper-->
+      <div class="accordion accordion-1 pt-5" *ngFor="let item of testing" id="accordionEx23" role="tablist">
+        <div class="card">
+          <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading96">
+            <h5 class="text-uppercase mb-0 py-1">
+              <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true" aria-controls="collapse96">
+                I am the first title of accordion
+              </a>
+            </h5>
+          </div>
+          <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96" data-parent="#accordionEx23">
+            <div class="card-body">
+              <div class="row my-4">
+                <div class="col-md-8">
+                  <h2 class="font-weight-bold mb-3 black-text">Hi! I am the first one.</h2>
+                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                  <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-4 mt-3 pt-2">
+                  <div class="view z-depth-1">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
+            <h5 class="text-uppercase mb-0 py-1">
+              <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97" aria-expanded="false" aria-controls="collapse97">
+                I am the second title of accordion
+              </a>
+            </h5>
+          </div>
+          <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97" data-parent="#accordionEx23">
+            <div class="card-body">
+              <div class="row my-4">
+                <div class="col-md-8">
+                  <h2 class="font-weight-bold mb-3 black-text">Hi! I am the second one.</h2>
+                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                  <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-4 mt-3 pt-2">
+                  <div class="view z-depth-1">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
+            <h5 class="text-uppercase mb-0 py-1">
+              <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98" aria-expanded="false" aria-controls="collapse98">
+                I am the third title of accordion
+              </a>
+            </h5>
+          </div>
+          <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98" data-parent="#accordionEx23">
+            <div class="card-body">
+              <div class="row my-4">
+                <div class="col-md-8">
+                  <h2 class="font-weight-bold mb-3 black-text">Hi! I am the third one.</h2>
+                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+                  <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-4 mt-3 pt-2">
+                  <div class="view z-depth-1">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Accordion wrapper-->
     </div>
   </div>
 
@@ -103,7 +189,7 @@
             </p>
             <a class="btn btn-outline-white btn-rounded" (click)="verMas()">
               <i class="fa fa-clone left"></i> Ver Mas</a>
-              <button class="btn" (click)="verMas()">Ver Jornada</button>
+            <button class="btn" (click)="verMas()">Ver Jornada</button>
           </div>
         </div>
       </div>
