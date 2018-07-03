@@ -1,7 +1,8 @@
 <!--  Comienzo del NavBar -->
-<nav class="navbar fixed-top navbar-expand-sm navbar-light">
+<nav class="navbar fixed-top navbar-expand-md navbar-light">
   <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">
     <img class="img-fluid p-0 m-0" src="../../assets/images/logoasep.png" style="width: 180px; height: 50px;">
+    <img class="img-fluid pl-3 pb-1 m-0" src="../../assets/images/UTN.png" style="width: 80px; height: 60px;">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -10,6 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto ml-auto text-center">
       <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Que es ?</a>
+      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'noticias'" [duration]="500"> Noticias</a>
       <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'mision-vision'" [duration]="500">Mision, Vision y Objetivos</a>
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JASEP-IT</a>
@@ -28,120 +30,48 @@
 <div class="container-fluid slider-1 pb-0" id="que-es">
   <div class="row">
     <div class="col">
-      <div class="card card-image" id="imagen1">
+      <div id="imagen1">
         <div class="text-white text-center py-5 px-4 my-5">
-          <div>
-            <h1 class="card-title pt-3 mb-5 font-bold display-2">
-              <strong>ASEP</strong>
-            </h1>
-            <p class="mx-5 mb-5" id="parrafo1">Sigla que describe la relación entre las 3 disciplinas AUDITORIA DE SISTEMAS, SEGURIDAD DE LA INFORMACIÓN Y PERITAJE
-              INFORMATICO.
-              <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas
-              y de la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar
-              actividades vinculadas con el cumplimiento de estándares de seguridad.
-              <br>ASEP está enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación
-              Tecnológica de la Universidad Tecnológica Nacional, Facultad Regional de Tucumán.
-            </p>
-          </div>
+          <h1 class="card-title pt-3 mb-5" style="font-size: 3.5em">
+            <strong>ASEP-IT</strong>
+          </h1>
+          <p class="text-center" id="parrafo1">Sigla que describe la relación entre las 3 disciplinas AUDITORIA DE SISTEMAS, SEGURIDAD DE LA INFORMACIÓN Y PERITAJE
+            INFORMATICO.
+            <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas
+            y de la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar
+            actividades vinculadas con el cumplimiento de estándares de seguridad.
+            <br>ASEP está enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación Tecnológica
+            de la Universidad Tecnológica Nacional, Facultad Regional de Tucumán.
+          </p>
         </div>
       </div>
-    </div>
-    <div class="col pt-5">
-      <!--Accordion wrapper-->
-      <div class="accordion accordion-1 pt-5" *ngFor="let item of testing" id="accordionEx23" role="tablist">
-        <div class="card">
-          <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading96">
-            <h5 class="text-uppercase mb-0 py-1">
-              <a class="white-text font-weight-bold" data-toggle="collapse" href="#collapse96" aria-expanded="true" aria-controls="collapse96">
-                I am the first title of accordion
-              </a>
-            </h5>
-          </div>
-          <div id="collapse96" class="collapse show" role="tabpanel" aria-labelledby="heading96" data-parent="#accordionEx23">
-            <div class="card-body">
-              <div class="row my-4">
-                <div class="col-md-8">
-                  <h2 class="font-weight-bold mb-3 black-text">Hi! I am the first one.</h2>
-                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                  <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-                <div class="col-md-4 mt-3 pt-2">
-                  <div class="view z-depth-1">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading97">
-            <h5 class="text-uppercase mb-0 py-1">
-              <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse97" aria-expanded="false" aria-controls="collapse97">
-                I am the second title of accordion
-              </a>
-            </h5>
-          </div>
-          <div id="collapse97" class="collapse" role="tabpanel" aria-labelledby="heading97" data-parent="#accordionEx23">
-            <div class="card-body">
-              <div class="row my-4">
-                <div class="col-md-8">
-                  <h2 class="font-weight-bold mb-3 black-text">Hi! I am the second one.</h2>
-                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                  <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-                <div class="col-md-4 mt-3 pt-2">
-                  <div class="view z-depth-1">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header blue lighten-3 z-depth-1" role="tab" id="heading98">
-            <h5 class="text-uppercase mb-0 py-1">
-              <a class="collapsed font-weight-bold white-text" data-toggle="collapse" href="#collapse98" aria-expanded="false" aria-controls="collapse98">
-                I am the third title of accordion
-              </a>
-            </h5>
-          </div>
-          <div id="collapse98" class="collapse" role="tabpanel" aria-labelledby="heading98" data-parent="#accordionEx23">
-            <div class="card-body">
-              <div class="row my-4">
-                <div class="col-md-8">
-                  <h2 class="font-weight-bold mb-3 black-text">Hi! I am the third one.</h2>
-                  <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-                  <p class="mb-0">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-                <div class="col-md-4 mt-3 pt-2">
-                  <div class="view z-depth-1">
-                    <img src="https://mdbootstrap.com/img/Photos/Others/nature.jpeg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Accordion wrapper-->
     </div>
   </div>
-
+  <div class="row pt-5" id="noticias">
+    <div class="col-md-4" *ngFor="let noticia of noticias">
+      <div class="jumbotron" style="border: 3px solid midnightblue">
+        <div class="text-center">
+          <img src="{{noticia.imagen}}" class="mb-5 img-thumbnail" style="height: 200px; height: 200px;" alt="">
+        </div>
+        <div class="text-center text-primary">
+          <h5>{{noticia.titulo}}</h5>
+        </div>
+        <div class="text-center">{{noticia.cuerpo}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center text-white" style="background-color: midnightblue;width: 100%; height: 45px;">Powered by SeguInfo</div>
 </div>
+
 <!-- FIN SECCIÓN -->
 
 <!-- SECCIÓN 2 -->
 <div class="container-fluid slider-2 mt-0 pb-0" id="mision-vision">
-  <div class="card-group">
+  <div class="card-group text-center">
     <div class="card">
       <img class="card-img-top" src="../assets/images/apple-book-computer-desk-hand-iphone-laptop-looking-189906.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">MISION</h5>
+        <h3 class="card-title">MISION</h3>
         <p class="card-text">Trabajar en favor de la prevención y el desarrollo integral de la Seguridad Cibernética, a través de programas y
           proyectos que permitan convertirnos en aliados con Organismos Públicos y Privados.</p>
       </div>
@@ -150,7 +80,7 @@
       <img class="card-img-top" src="../assets/images/depositphotos_106697094-stock-photo-workspace-desk-with-laptop-coffee.jpg"
         alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">VISION</h5>
+        <h3 class="card-title">VISION</h3>
         <p class="card-text">Ser reconocidos como un equipo de respuesta ante incidentes de seguridad cibernética (Computer Emergency Response
           Team).
         </p>
@@ -159,7 +89,7 @@
     <div class="card">
       <img class="card-img-top" src="../assets/images/depositphotos_62299551-stock-photo-female-hand-with-pen-notebook.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">VALORES</h5>
+        <h3 class="card-title">VALORES</h3>
         <p class="card-text">Innovación permanente en procesos y servicios.
           <br> Trabajamos con Integridad y en equipo.
           <br> Flexibilización y Adaptación al cambio.
@@ -187,8 +117,6 @@
               no docente, estudiantes y graduados) así como también aquellos que provienen de empresas públicas, privadas
               y público en general.
             </p>
-            <a class="btn btn-outline-white btn-rounded" (click)="verMas()">
-              <i class="fa fa-clone left"></i> Ver Mas</a>
             <button class="btn" (click)="verMas()">Ver Jornada</button>
           </div>
         </div>

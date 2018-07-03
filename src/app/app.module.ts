@@ -18,6 +18,7 @@ import { JornadaService } from './services/jornada/jornada.service';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { JasepitComponent } from './jasepit/jasepit.component';
+import { InicioService } from './services/inicio/inicio.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { JasepitComponent } from './jasepit/jasepit.component';
     AdministradorModule,
     AngularFontAwesomeModule
   ],
-  providers: [UserService,JornadaService, UserGuard],
+  providers: [UserService,JornadaService, UserGuard,InicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

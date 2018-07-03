@@ -27,22 +27,25 @@
 }
 
 .slider-1, .slider-3, .slider-4,{
-	height: 100vh;
     text-align: center;
     font-family: GeomanistRegularItalica;
 }
 .slider-1{
-    background: beige;
+    background: white;
 }
 .slider-2{
     background: #b80d57;
     font-family: GeomanistRegularItalica;
 }
 .slider-3{
-	background: #e03e36;
+    background: #e03e36;
+    height: 100vh;
+
 }
 .slider-4{
-	background: #ff7c38;
+    background: #ff7c38;
+    height: 100vh;
+
 }
 .slider-5{
     
@@ -57,7 +60,7 @@
 }
 
 #imagen1, #imagen3, #imagen4{
-    height: 100vh;
+    height: 100%;
     background: rgba(191,28,28,1);
     background: -moz-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(191,28,28,1)), color-stop(100%, rgba(24,35,97,1)));
@@ -68,15 +71,20 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf1c1c', endColorstr='#182361', GradientType=1 );
 }
 #parrafo1, #parrafo3, #parrafo4{
-    font-size: 30px;
+    font-size: 1.5em;
 }
 /*DEFINIENDO ANIMACIONES*/
 
  #mision-vision .card-group .card:hover{
-    background: rgba(24,35,97,1);
+    background: rgba(24,35,97,0.5);
     transition: all 0.5s ease-in;
- }
-
+    font-style: oblique
+}
+#noticias .jumbotron:hover {
+    background: rgba(24,35,97,0.5);
+    transition: all 0.5s ease-in;
+}
  .img-estandares{
      height: 100px;
  }
+ 

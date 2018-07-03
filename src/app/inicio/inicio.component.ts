@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params} from '@angular/router';
+import { InicioService } from '../services/inicio/inicio.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,16 +8,37 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  public status : string;
+  public noticias:string[];
 
   constructor(
+    private inicioService:InicioService,
     private _route: ActivatedRoute,
     private _router: Router) { }
 
   ngOnInit() {
+    console.log('llegue hasta aqui oninit');
+    this.inicioService.getNoticias().subscribe(
+      response => {
+        if(!response){
+          this.status = 'error'
+        }
+        else{
+          this.noticias = response.noticias;
+          console.log(this.noticias);
+        }
+      },
+      error => {
+        var errorMessage = <any>error;
+        console.log(errorMessage);
+        if (errorMessage != null) {
+          this.status = 'Error en traer la noticias'
+        }
+      }
+    );
   }
 
   verMas():void{
     this._router.navigate(['jasepit']);
-
   }
 }
