@@ -1,6 +1,6 @@
 <!--  Comienzo del NavBar -->
 <nav class="navbar fixed-top navbar-expand-md navbar-light">
-  <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">
+  <a class="navbar-brand" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500" [routerLink]="['inicio']" [routerLinkActive]="['active']">
     <img class="img-fluid p-0 m-0" src="../../assets/images/logoasep.png" style="width: 180px; height: 50px;">
     <img class="img-fluid pl-3 pb-1 m-0" src="../../assets/images/UTN.png" style="width: 80px; height: 60px;">
   </a>
@@ -66,7 +66,7 @@
 <!-- FIN SECCIÓN -->
 
 <!-- SECCIÓN 2 -->
-<div class="container-fluid slider-2 mt-0 pb-0" id="mision-vision">
+<div class="container-fluid slider-2 pt-5 pb-5" id="mision-vision">
   <div class="card-group text-center">
     <div class="card">
       <img class="card-img-top" src="../assets/images/apple-book-computer-desk-hand-iphone-laptop-looking-189906.jpg" alt="Card image cap">
@@ -109,7 +109,7 @@
       <div class="card card-image" id="imagen3">
         <div class="text-white text-center py-5 px-4 my-5">
           <div>
-            <h1 class="card-title pt-3 mb-5 font-bold display-2">
+            <h1 class="card-title pt-3 mb-5" style="font-size: 3.5em">
               <strong>JASEPIT - Jornada de Auditoría, Seguridad y Peritaje Informático</strong>
             </h1>
             <p class="mx-5 mb-5" id="parrafo3">Jornada donde se invitan expertos locales, nacionales e internacionales en las temáticas mencionadas para que
