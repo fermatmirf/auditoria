@@ -1,4 +1,4 @@
-<div class="modal-dialog text-center mt-5 pt-5">
+<!-- <div class="modal-dialog text-center mt-5 pt-5">
         <div class="col-md-12 main-section">
           <div class="modal-content">
                 <div class="col-12 user-img">
@@ -46,4 +46,125 @@
                 <div *ngIf="status == 'error'" class="alert alert-danger">Hubo un error al registrar la jornada.</div>
         </div>
     </div>
+</div> -->
+<div class="container-fluid bg-danger ">
+  <div class="jumbotron m-0 text-center">
+    <h1 class="display-5">Registrar Jornada</h1>
+    <p class="lead">Por favor complete los campos para registrar una nueva jornada!</p>
+  </div>
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div class="container-fluid">
+      <div class="row bg-primary rounded mt-5">
+        <div class="col-md-4 col-sm-12 mt-4 mb-4">
+          <label for="Jornada de Auditoria, CiberSeguridad y Peritaje Informatico 20..">Nombre de Jornada:</label>
+          <input class="form-group" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="jornada.nombre" required>
+          <span *ngIf="!nombre.valid && nombre.touched">El nombre es obligatorio</span>
+        </div>
+        <div class="col-md-4 col-sm-12 mt-4 mb-4">
+          <label>Año:</label>
+          <input class="form-group" type="date" name="anio" #anio="ngModel" [(ngModel)]="jornada.anio" required>
+          <span *ngIf="!anio.valid && anio.touched">El año es obligatorio</span>
+        </div>
+        <div class="col-md-4 col-sm-12 mt-4 mb-4">
+          <label>Sede:</label>
+          <input class="form-group" type="text" name="sede" #sede="ngModel" [(ngModel)]="jornada.sede" required>
+          <span *ngIf="!sede.valid && sede.touched">La sede es obligatoria</span>
+        </div>
+        <div class="col-md-6 col-sm-12 mt-4 mb-4">
+          <label>Organizadores:</label>
+          <select class="form-group">
+            <option *ngFor="let organizador of organizadors" [value]="organizador" (click)="onSelectOrganizador(organizador)">{{organizador.url}}</option>
+          </select>
+          <input type="submit" *ngIf="organizadorSelected" value="Agregar Organizador" class="btn btn-primary" (click)="addToTableOrganizador(organizadorSelected)" />
+        </div>
+
+        <div class="col-md-6 col-sm-12 mt-4 mb-4">
+          <div class="table-responsive">
+            <table class="table table-sm table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Url</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let organizador of organizadoresTable">
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{organizador.nombre}}</td>
+                  <td>{{organizador.url}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 mt-4 mb-4">
+          <label>Expositores:</label>
+          <select class="form-group">
+            <option *ngFor="let expositor of expositors" [value]="expositor" (click)="onSelectExpositor(expositor)">{{expositor.nombre}}</option>
+          </select>
+          <input type="submit" *ngIf="expositorSelected" value="Agregar Expositor" class="btn btn-primary" (click)="addToTableExpositor(expositorSelected)" />
+        </div>
+        <div class="col-md-6 col-sm-12 mt-4 mb-4">
+          <div class="table-responsive">
+              <table class="table table-sm table-hover">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Apellido</th>
+                      <th scope="col">Procedencia</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let expositor of expositoresTable">
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{{expositor.nombre}}</td>
+                      <td>{{expositor.apellido}}</td>
+                      <td>{{expositor.procedencia}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 mt-4 mb-4">
+          <label>Tematicas:</label>
+          <select class="form-group">
+            <option *ngFor="let tematica of tematics" [value]="tematica" (click)="onSelectTematica(tematica)">{{tematica.titulo}}</option>
+          </select>
+          <input type="submit" *ngIf="tematicaSelected" value="Agregar Tematica" class="btn btn-primary" (click)="addToTableTematica(tematicaSelected)" />
+        </div>
+        <div class="col-md-6 col-sm-12 mt-4 mb-4">
+          <div class="table-responsive">
+            <table class="table table-sm table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Tematica</th>
+                  <th scope="col">Titulo</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let tematica of tematicasTable">
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{tematica.tema}}</td>
+                  <td>{{tematica.titulo}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 mt-4 mb-4">
+          <label>Contacto:</label>
+          <input class="form-group" type="text" name="contacto" #contacto="ngModel" [(ngModel)]="jornada.contacto" required>
+          <span *ngIf="!contacto.valid && contacto.touched">Los contactos son obligatorios</span>
+        </div>
+        <div class="col-md-12 col-sm-12 text-center">
+          <input type="submit" value="Registrar" class="btn m-5" [disabled]="!registerForm.form.valid" />
+        </div>
+        <div *ngIf="status == 'success'" class="alert alert-success">Se registro la jornada correctamente.</div>
+        <div *ngIf="status == 'error'" class="alert alert-danger">Hubo un error al registrar la jornada.</div>
+      </div>
+    </div>
+  </form>
 </div>
