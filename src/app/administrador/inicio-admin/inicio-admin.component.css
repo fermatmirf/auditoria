@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-.body{
-    height: 100vh;
+*{
     font-family: Roboto, sans-serif;
-    background: url(../../../assets/images/iWBk7rH.jpg) no-repeat center center fixed;
 }
 

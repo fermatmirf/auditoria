@@ -8,9 +8,10 @@ export class Jornada {
         public nombre: string,
         public anio: number,
         public sede: string,
-        public organizadores: Organizador[],
-        public expositores: Expositor[],
-        public tematicas: Tematica[],
-        public contacto: string
+        public organizadores: string,
+        public expositores: string,
+        public tematicas: string,
+        public contacto: string,
+        public user: string
     ){}
 }

@@ -47,16 +47,16 @@
         </div>
     </div>
 </div> -->
-<div class="container-fluid bg-danger ">
-  <div class="jumbotron m-0 text-center">
+<div class="container-fluid">
+  <div class="jumbotron m-0 text-center border border-info rounded">
     <h1 class="display-5">Registrar Jornada</h1>
     <p class="lead">Por favor complete los campos para registrar una nueva jornada!</p>
   </div>
   <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-    <div class="container-fluid">
-      <div class="row bg-primary rounded mt-5">
+    <div class="container-fluid border border-primary rounded">
+      <div class="row mt-5">
         <div class="col-md-4 col-sm-12 mt-4 mb-4">
-          <label for="Jornada de Auditoria, CiberSeguridad y Peritaje Informatico 20..">Nombre de Jornada:</label>
+          <label>Nombre de Jornada:</label>
           <input class="form-group" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="jornada.nombre" required>
           <span *ngIf="!nombre.valid && nombre.touched">El nombre es obligatorio</span>
         </div>
@@ -75,24 +75,26 @@
           <select class="form-group">
             <option *ngFor="let organizador of organizadors" [value]="organizador" (click)="onSelectOrganizador(organizador)">{{organizador.url}}</option>
           </select>
-          <input type="submit" *ngIf="organizadorSelected" value="Agregar Organizador" class="btn btn-primary" (click)="addToTableOrganizador(organizadorSelected)" />
+          <span *ngIf="organizadorSelected" class="btn btn-sm btn-primary" (click)="addToTableOrganizador(organizadorSelected)">Agregar Organizador</span> 
         </div>
 
         <div class="col-md-6 col-sm-12 mt-4 mb-4">
           <div class="table-responsive">
             <table class="table table-sm table-hover">
               <thead class="thead-dark">
-                <tr>
+                <tr class="text-center">
                   <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Url</th>
+                  <th scope="col">Accion</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let organizador of organizadoresTable">
-                <tr>
+              <tbody *ngFor="let organizador of organizadoresTable" (click)="onSelectTableOrganizador(organizador)">
+                <tr class="text-center">
                   <th scope="row">1</th>
                   <td>{{organizador.nombre}}</td>
                   <td>{{organizador.url}}</td>
+                  <td><fa name="fas fa-ban" class="btn btn-sm btn-danger"(click)="removeOrganizadorOfTable(organizador)"></fa></td>
                 </tr>
               </tbody>
             </table>
@@ -103,25 +105,27 @@
           <select class="form-group">
             <option *ngFor="let expositor of expositors" [value]="expositor" (click)="onSelectExpositor(expositor)">{{expositor.nombre}}</option>
           </select>
-          <input type="submit" *ngIf="expositorSelected" value="Agregar Expositor" class="btn btn-primary" (click)="addToTableExpositor(expositorSelected)" />
+          <span *ngIf="expositorSelected" class="btn btn-sm btn-primary" (click)="addToTableExpositor(expositorSelected)"> Agregar Expositor</span> 
         </div>
         <div class="col-md-6 col-sm-12 mt-4 mb-4">
           <div class="table-responsive">
               <table class="table table-sm table-hover">
                   <thead class="thead-dark">
-                    <tr>
+                    <tr class="text-center">
                       <th scope="col">#</th>
                       <th scope="col">Nombre</th>
                       <th scope="col">Apellido</th>
                       <th scope="col">Procedencia</th>
+                      <th scope="col">Accion</th>
                     </tr>
                   </thead>
-                  <tbody *ngFor="let expositor of expositoresTable">
-                    <tr>
+                  <tbody *ngFor="let expositor of expositoresTable" (click)="onSelectTableExpositor(expositor)">
+                    <tr class="text-center">
                       <th scope="row">1</th>
                       <td>{{expositor.nombre}}</td>
                       <td>{{expositor.apellido}}</td>
                       <td>{{expositor.procedencia}}</td>
+                      <td class="text-center"><fa name="fas fa-ban" class="btn btn-sm btn-danger"(click)="removeExpositorrOfTable(organizador)"></fa></td>
                     </tr>
                   </tbody>
                 </table>
@@ -132,23 +136,25 @@
           <select class="form-group">
             <option *ngFor="let tematica of tematics" [value]="tematica" (click)="onSelectTematica(tematica)">{{tematica.titulo}}</option>
           </select>
-          <input type="submit" *ngIf="tematicaSelected" value="Agregar Tematica" class="btn btn-primary" (click)="addToTableTematica(tematicaSelected)" />
+          <span *ngIf="tematicaSelected" class="btn btn-sm btn-primary" (click)="addToTableTematica(tematicaSelected)">Agregar Tematica</span> 
         </div>
         <div class="col-md-6 col-sm-12 mt-4 mb-4">
           <div class="table-responsive">
             <table class="table table-sm table-hover">
               <thead class="thead-dark">
-                <tr>
+                <tr class="text-center">
                   <th scope="col">#</th>
                   <th scope="col">Tematica</th>
                   <th scope="col">Titulo</th>
+                  <th scope="col">Accion</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let tematica of tematicasTable">
-                <tr>
+              <tbody *ngFor="let tematica of tematicasTable" (click)="onSelectTableTematica(tematica)">
+                <tr class="text-center">
                   <th scope="row">1</th>
                   <td>{{tematica.tema}}</td>
                   <td>{{tematica.titulo}}</td>
+                  <td class="text-center"><fa name="fas fa-ban" class="btn btn-sm btn-danger"(click)="removeTematicaOfTable(organizador)"></fa></td>
                 </tr>
               </tbody>
             </table>
