@@ -10,14 +10,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto ml-auto text-center">
-      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Que es ?</a>
+      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Qué es?</a>
       <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'noticias'" [duration]="500"> Noticias</a>
       <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'mision-vision'" [duration]="500">Mision, Vision y Objetivos</a>
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JASEP-IT</a>
         <div class="dropdown-menu text-center" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" SimpleSmoothScroll [scrollTo]="'jasepit'" [duration]="500">Acerca de JASEP IT</a>
-          <a class="dropdown-item" (click)="verMas()">JASEP IT 2018</a>
+          <a class="dropdown-item" (click)="verMas()">JASEP-IT 2018</a>
         </div>
       </div>
       <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'servicios'" [duration]="500">Servicios</a>
@@ -56,11 +56,11 @@
         <div class="text-center text-primary">
           <h5>{{noticia.titulo}}</h5>
         </div>
-        <div class="text-center">{{noticia.cuerpo}}</div>
+        <div class="text-center" *ngIf="info">{{noticia.cuerpo}}</div>
       </div>
     </div>
   </div>
-  <div class="container-fluid text-center text-white" style="background-color: midnightblue;width: 100%; height: 45px;">Powered by SeguInfo</div>
+  <div class="container-fluid text-center text-white" style="background-color: midnightblue;width: 100%; height: 45px;"><h3>Noticias por <a href="https://blog.segu-info.com.ar/">SeguInfo</a>.</h3></div>
 </div>
 
 <!-- FIN SECCIÓN -->
@@ -133,10 +133,10 @@
       <div class="card card-image" id="imagen4">
         <div class="text-white text-center py-5 px-4 my-5">
           <div>
-            <h1 class="card-title pt-3 mb-5 font-bold display-2">
+            <h1 class="card-title pt-3 mb-5" style="font-size: 3.5em">
               <strong>Servicios</strong>
             </h1>
-            <p class="mx-5 mb-5" id="parrafo4">Ofrecer servicios y actividades de extensión y concientización a organizaciones públicas y privadas, así como
+            <p class="mx-5 mb-5" style="font-size: 1.5em" id="parrafo4">Ofrecer servicios y actividades de extensión y concientización a organizaciones públicas y privadas, así como
               también propuestas académicas y de investigación en las ramas de Auditoría, Ciberseguridad y Peritaje Informático,
               y las complementarias Voto Electrónico y Gobernanza de Internet
             </p>
@@ -148,8 +148,8 @@
 </div>
 <!-- FIN SECCIÓN -->
 <!-- SECCIÓN 5 -->
-<div class="container-fluid slider-5" id="estandares">
-  <h1 class="card-title pt-3 mb-5 font-italic display-5">
+<div class="container-fluid slider-5" style="background: papayawhip" id="estandares">
+  <h1 class="card-title pt-3 mb-5 font-italic" style="font-size: 3.5em">
     <strong>Estandares de Auditoria de Sistemas de Informacion</strong>
   </h1>
   <div class="d-flex justify-content-lg-center">
@@ -172,8 +172,8 @@
 </div>
 <!-- FIN SECCIÓN -->
 <!-- SECCIÓN 6 -->
-<div class="container-fluid slider-5" id="estandares">
-  <h1 class="card-title pt-3 mb-5 font-italic display-5">
+<div class="container-fluid slider-5" style="background: papayawhip" id="estandares">
+  <h1 class="card-title pt-3 mb-5 font-italic" style="font-size: 3.5em">
     <strong>Big Four en Auditoria de Sistemas de Informacion </strong>
   </h1>
   <div class="d-flex justify-content-lg-center">
