@@ -6,6 +6,7 @@ import { EditarJornadaComponent } from "./editar-jornada/editar-jornada.componen
 import { ListarJornadaComponent } from "./listar-jornada/listar-jornada.component";
 import { AgregarJornadaComponent } from "./agregar-jornada/agregar-jornada.component";
 import { UserGuard } from "../services/user.guard";
+import { LoginGuard } from "../services/login.guard";
 
 const adminRoutes: Routes = [
     {   
@@ -22,7 +23,7 @@ const adminRoutes: Routes = [
                 path: 'registrar-jornada', component: AgregarJornadaComponent, canActivate: [UserGuard],
             },
             {
-                path: 'login', component: LoginComponent
+                path: 'login', component: LoginComponent, canActivate: [LoginGuard]
             }
         ]
     }

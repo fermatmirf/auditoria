@@ -1,10 +1,28 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col text-center">
-      <div class="card card-image pt-5 pb-5" id="fondo">
-        <h1 style="color: orangered">JORNADA DE AUDITORIA, CIBERSEGURIDAD Y PERITAJE INFORMATICO </h1>
+    <!--Jumbotron-->
+    <div class="jumbotron text-center">
+
+      <!--Title-->
+      <h4 class="card-title font-bold pb-2">
+        <strong>JORNADA DE AUDITORIA, CIBERSEGURIDAD Y PERITAJE INFORMATICO</strong>
+      </h4>
+
+      <!--Card image-->
+      <div class="view overlay my-4">
+        <img src="../../assets/images/logoasep.png" class="img-fluid" alt="">
+        <a href="#">
+          <div class="mask rgba-white-slight"></div>
+        </a>
       </div>
+
+      <h5 class="indigo-text font-bold mb-4"></h5>
+
+      <p class="card-text"></p>
+
+    
     </div>
+    <!--Jumbotron-->
   </div>
   <div class="row">
     <div class="col">
@@ -12,57 +30,93 @@
       <div class="classic-tabs">
 
         <!-- Nav tabs -->
-        <ul class="nav nav-fill" style="background: midnightblue;" role="tablist">
+        <ul class="nav nav-fill bg-primary"  role="tablist">
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panelSede" role="tab">Sede</a>
+            <a class="nav-link text-body" data-toggle="tab" href="#panelSede" role="tab"><h3>Sede</h3></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panelOrganizadores" role="tab">Organizadores</a>
+            <a class="nav-link text-body" data-toggle="tab" href="#panelOrganizadores" role="tab"><h3>Organizadores</h3></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panelExpositores" role="tab">Expositores</a>
+            <a class="nav-link text-body" data-toggle="tab" href="#panelExpositores" role="tab"><h3>Expositores</h3></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panelTematicas" role="tab">Tematicas</a>
+            <a class="nav-link text-body" data-toggle="tab" href="#panelTematicas" role="tab"><h3>Tematicas</h3></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panelEnvianos" role="tab">Envianos tu paper</a>
+            <a class="nav-link text-body" data-toggle="tab" href="#panelEnvianos" role="tab"><h3>Envianos tu paper</h3></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panelContactos" role="tab">Contacto</a>
+            <a class="nav-link text-body" data-toggle="tab" href="#panelContactos" role="tab"><h3>Contacto</h3></a>
           </li>
         </ul>
 
         <div class="tab-content border-right border-bottom border-left rounded-bottom">
           <!--Panel 1-->
           <div class="tab-pane fade in show active" id="panelSede" role="tabpanel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
+            <p class="text-center">{{jornada.sede}}</p>
           </div>
           <!--/.Panel 1-->
           <!--Panel 2-->
           <div class="tab-pane fade" id="panelOrganizadores" role="tabpanel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
+              <div class="table-responsive">
+                  <table class="table table-sm table-hover">
+                    <thead class="thead-dark">
+                      <tr class="text-center">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Url</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let organizador of jornada.organizadores">
+                      <tr class="text-center">
+                        <td>{{organizador.nombre}}</td>
+                        <td><a href="">{{organizador.url}}</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
           </div>
           <!--/.Panel 2-->
           <!--Panel 3-->
           <div class="tab-pane fade" id="panelExpositores" role="tabpanel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
+              <div class="table-responsive">
+                  <table class="table table-sm table-hover">
+                    <thead class="thead-dark">
+                      <tr class="text-center">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Procedencia</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let expositor of jornada.expositores">
+                      <tr class="text-center">
+                        <td>{{expositor.nombre}}</td>
+                        <td>{{expositor.apellido}}</td>
+                        <td>{{expositor.procedencia}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
           </div>
           <!--/.Panel 3-->
           <!--Panel 4-->
           <div class="tab-pane fade" id="panelTematicas" role="tabpanel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
+              <div class="table-responsive">
+                  <table class="table table-sm table-hover">
+                    <thead class="thead-dark">
+                      <tr class="text-center">
+                        <th scope="col">Tematica</th>
+                        <th scope="col">Titulo</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let tematica of jornada.tematicas">
+                      <tr class="text-center">
+                        <td>{{tematica.tema}}</td>
+                        <td>{{tematica.titulo}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
           </div>
           <!--/.Panel 4-->
           <!--Panel 5-->
@@ -74,9 +128,7 @@
           <!--/.Panel 5-->
           <!--Panel 6-->
           <div class="tab-pane fade" id="panelContactos" role="tabpanel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
+              <p class="text-center">{{jornada.contacto}}</p>
           </div>
           <!--/.Panel 6-->
         </div>

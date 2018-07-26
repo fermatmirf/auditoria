@@ -36,8 +36,8 @@ export class ExpositorService {
     let headers = new HttpHeaders().set('Content-Type','application/json')
                                     .set('Authorization',this.userService.getToken());
     if(id){
-      return this.http.get(this.urlLocal+'expositor/'+id,{headers:headers});                                    
+      return this.http.get(this.url+'expositor/'+id,{headers:headers});                                    
     }                                    
-    return this.http.get(this.urlLocal+'expositor',{headers:headers});                                    
+    return this.http.get(this.url+'expositor',{headers:headers});                                    
   }
 }

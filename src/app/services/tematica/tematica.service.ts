@@ -35,8 +35,8 @@ export class TematicaService {
     let headers = new HttpHeaders().set('Content-Type','application/json')
                                     .set('Authorization',this.userService.getToken());
     if(id){
-      return this.http.get(this.urlLocal+'tematica/'+id,{headers:headers});                                    
+      return this.http.get(this.url+'tematica/'+id,{headers:headers});                                    
     }                                    
-    return this.http.get(this.urlLocal+'tematica',{headers:headers});                                    
+    return this.http.get(this.url+'tematica',{headers:headers});                                    
   }
 }

@@ -1,6 +1,6 @@
 <!--  Comienzo del NavBar -->
 <nav class="navbar fixed-top navbar-expand-md navbar-light">
-  <a class="navbar-brand" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500" [routerLink]="['inicio']" [routerLinkActive]="['active']">
+  <a class="navbar-brand" [routerLink]="['inicio']" [routerLinkActive]="['active']">
     <img class="img-fluid p-0 m-0" src="../../assets/images/logoasep.png" style="width: 180px; height: 50px;">
     <img class="img-fluid pl-3 pb-1 m-0" src="../../assets/images/UTN.png" style="width: 80px; height: 60px;">
   </a>
@@ -47,21 +47,40 @@
       </div>
     </div>
   </div>
-  <div class="row pt-5" id="noticias">
-    <div class="col-md-4" *ngFor="let noticia of noticias">
-      <div class="jumbotron" style="border: 3px solid midnightblue">
-        <div class="text-center">
-          <img src="{{noticia.imagen}}" class="mb-5 img-thumbnail" style="height: 200px; height: 200px;" alt="">
+  
+  <div class="row pb-5" id="noticias">
+      <div class="col-3">
+        <div *ngFor="let noticia of noticias" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills{{i + 1}}" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">{{noticia.titulo}}{{i + 1 }}</a>
         </div>
-        <div class="text-center text-primary">
-          <h5>{{noticia.titulo}}</h5>
+      </div>
+      <div class="col-9">
+        <!-- <div *ngFor="let noticia of noticias" class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <h4 id="panel1" class="font-weight-bold">{{noticia.titulo}}</h4>
+              <div class="view overlay my-4">
+                  <img src="{{noticia.imagen}}" class="img-fluid" alt="">
+              </div>
+              <p class="lead">{{noticia.cuerpo}}</p>
+          </div> -->
         </div>
-        <div class="text-center" *ngIf="info">{{noticia.cuerpo}}</div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid text-center text-white" style="background-color: midnightblue;width: 100%; height: 45px;"><h3>Noticias por <a href="https://blog.segu-info.com.ar/">SeguInfo</a>.</h3></div>
-</div>
+<!-- Nav tabs -->
+<!-- <ul *ngFor="let noticia of noticias" id="navbar-example1" class="nav nav-tabs nav-justified indigo mb-4 mx-0">
+    <li class="nav-item">
+        <a class="nav-link active" href="#panel1">{{noticia.titulo}}</a>
+    </li>
+</ul> -->
+<!--Spied element-->
+<!-- <div *ngFor="let noticia of noticias" class="scrollspy-example z-depth-1 mt-4" data-spy="scroll" data-target="#navbar-example1" data-offset="0">
+    <h4 id="panel1" class="font-weight-bold">{{noticia.titulo}}</h4>
+    <div class="view overlay my-4">
+        <img src="{{noticia.imagen}}" class="img-fluid" alt="">
+    </div>
+    <p class="lead">{{noticia.cuerpo}}</p>
+</div> -->
+<!--/.Spied element-->
 
 <!-- FIN SECCIÓN -->
 

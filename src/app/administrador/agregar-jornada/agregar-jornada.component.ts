@@ -80,8 +80,6 @@ export class AgregarJornadaComponent implements OnInit {
   }
   //funciones para cargar combos de organizadores
   getExpositores(id): void {
-    console.log('lalalal');
-    
     this.expositorService.get(id).subscribe(
       response => {
         this.expositors = response.expositores;

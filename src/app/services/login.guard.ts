@@ -3,7 +3,7 @@ import { Router, CanActivate } from '@angular/router';
 import { UserService } from './user/user.service';
 
 @Injectable()
-export class UserGuard implements CanActivate{
+export class LoginGuard implements CanActivate{
     constructor(
         private _router: Router,
         private _userService: UserService
@@ -11,13 +11,13 @@ export class UserGuard implements CanActivate{
     
     canActivate(){
         let identity = this._userService.getIdentity();
-
-        if(identity && ( identity.role == 'ROLE_USER' || identity.role == 'ROLE_ADMIN')){
+        console.log('estoy en el guard' + identity);
+        
+        if(identity == undefined || identity == null){
             return true;
         }else{
-            this._router.navigate(['admin']);
+            this._router.navigate(['registrar-jornada']);
             return false;
         }
     }
-   
 }

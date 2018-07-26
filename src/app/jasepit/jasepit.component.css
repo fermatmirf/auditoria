@@ -8,3 +8,9 @@
     background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
 }
+
+
+.jumbotron{
+ color: #4fc3f7 light-blue lighten-2;
+}
+

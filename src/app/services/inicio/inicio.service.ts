@@ -12,6 +12,6 @@ export class InicioService {
     console.log('llegue al servicio');
     let headers = new HttpHeaders().set('Content-Type','application/json');//porque node esta preparado para recibir JSON, sino seria unrenlcoded
 
-    return this.http.get('http://localhost:3800/api/segurInfo',{headers: headers});
+    return this.http.get('https://blooming-citadel-75893.herokuapp.com/api/segurInfo',{headers: headers});
   }
 }

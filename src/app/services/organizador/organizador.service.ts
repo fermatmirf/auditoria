@@ -34,9 +34,9 @@ export class OrganizadorService {
     let headers = new HttpHeaders().set('Content-Type','application/json')
                                     .set('Authorization',this.userService.getToken());
     if(id){
-      return this.http.get(this.urlLocal+'organizador/'+id,{headers:headers});                                    
+      return this.http.get(this.url+'organizador/'+id,{headers:headers});                                    
     }                                    
-    return this.http.get(this.urlLocal+'organizador',{headers:headers});                                    
+    return this.http.get(this.url+'organizador',{headers:headers});                                    
   }
 }
 

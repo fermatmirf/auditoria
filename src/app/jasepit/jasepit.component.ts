@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JornadaService } from '../services/jornada/jornada.service';
+import { Jornada } from '../models/jornada';
 
 @Component({
   selector: 'app-jasepit',
@@ -6,10 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jasepit.component.css']
 })
 export class JasepitComponent implements OnInit {
+  public jornada: Jornada;
+  public status : string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private jornadaService: JornadaService) { 
+    this.jornada = new Jornada(1,'',1,'','','','','','');
   }
 
+  ngOnInit() {
+    this.cargarUltimaJornada();
+  }
+
+  cargarUltimaJornada(){
+    this.jornadaService.getUltimaJornada().subscribe(
+      response => {
+        if(!response){
+          this.status = 'error'
+        }
+        else{
+          this.jornada = response.jornada;
+          this.status = 'success'
+          console.log(this.jornada);
+        }
+      }, error => {
+        var errorMessage = <any>error;
+        console.log(errorMessage);
+        if (errorMessage != null) {
+          this.status = 'error';
+        }
+      });
+  }
 }

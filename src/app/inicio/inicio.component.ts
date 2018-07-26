@@ -11,15 +11,20 @@ export class InicioComponent implements OnInit {
   public status : string;
   public info;
   public noticias:string[];
-
+  public i: number;
+  public j : number;
   constructor(
     private inicioService:InicioService,
     private _route: ActivatedRoute,
     private _router: Router) {
+      this.i = 0;
      }
 
   ngOnInit() {
     console.log('llegue hasta aqui oninit');
+    this.cargarNoticias();  
+  }
+  cargarNoticias():void{
     this.inicioService.getNoticias().subscribe(
       response => {
         if(!response){
@@ -27,6 +32,7 @@ export class InicioComponent implements OnInit {
         }
         else{
           this.noticias = response.noticias;
+          this.status = 'success'
           this.info;
           console.log(this.noticias);
         }
@@ -40,7 +46,6 @@ export class InicioComponent implements OnInit {
       }
     );
   }
-  
   verMas():void{
     this._router.navigate(['jasepit']);
   }

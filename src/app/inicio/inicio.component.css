@@ -1,3 +1,6 @@
+#que-es {
+  font-family: GeomanistRegularItalica;
+}
 @font-face {
     font-family: MyriadProRegular;
     src: url(/assets/fonts/Myriad\ Pro\ Regular.ttf);
@@ -14,78 +17,92 @@
     font-family: GeomanistRegular ;
     src: url(/assets/fonts/Geomanist-Regular&Italic/Webfont/Geomanist-Regular-Webfont/geomanist-regular-webfont.ttf);
 }
-#que-es{
-    font-family: GeomanistRegularItalica;
-}
-.navbar{
-    background-color: white;
-    font-family:  MyriadProRegular;
-}
-
-.navbar a{
-    color: orangered;
+  
+  
+.navbar {
+  background-color: white;
+  font-family: MyriadProRegular;
 }
 
-.slider-1, .slider-3, .slider-4,{
-    text-align: center;
-    font-family: GeomanistRegularItalica;
+.navbar a {
+  color: orangered;
 }
-.slider-1{
-    background: white;
-}
-.slider-2{
-    background: #b80d57;
-    font-family: GeomanistRegularItalica;
-}
-.slider-3{
-    background: #e03e36;
-    height: 100vh;
 
+.slider-1,
+.slider-3,
+.slider-4,
+  {
+  text-align: center;
+  font-family: GeomanistRegularItalica;
 }
-.slider-4{
-    background: #ff7c38;
-    height: 100vh;
 
+.slider-1 {
+  background: white;
 }
-.slider-5{
-    
-    text-align: center;
-    
+
+.slider-2 {
+  background: #b80d57;
+  font-family: GeomanistRegularItalica;
 }
-.footer{
-	background: rgb(4, 13, 85);
-	color:#fff;
-	text-align: center;
-	padding: 10px;
+
+.slider-3 {
+  background: #e03e36;
+  height: 100vh;
 }
-#imagen3, #imagen4{
-    height: 100vh;
+
+.slider-4 {
+  background: #ff7c38;
+  height: 100vh;
 }
-#imagen1, #imagen3, #imagen4{
-    background: rgba(191,28,28,1);
-    background: -moz-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(191,28,28,1)), color-stop(100%, rgba(24,35,97,1)));
-    background: -webkit-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
-    background: -o-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
-    background: -ms-linear-gradient(left, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
-    background: linear-gradient(to right, rgba(191,28,28,1) 0%, rgba(24,35,97,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf1c1c', endColorstr='#182361', GradientType=1 );
+
+.slider-5 {
+  text-align: center;
 }
-#parrafo1, #parrafo3, #parrafo4{
-    font-size: 1.5em;
+
+.footer {
+  background: rgb(4, 13, 85);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
 }
+
+#imagen3,
+#imagen4 {
+  height: 100vh;
+}
+
+#imagen1,
+#imagen3,
+#imagen4 {
+  background: rgba(191, 28, 28, 1);
+  background: -moz-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(191, 28, 28, 1)), color-stop(100%, rgba(24, 35, 97, 1)));
+  background: -webkit-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
+  background: -o-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
+  background: linear-gradient(to right, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf1c1c', endColorstr='#182361', GradientType=1);
+}
+
+#parrafo1,
+#parrafo3,
+#parrafo4 {
+  font-size: 1.5em;
+}
+
 /*DEFINIENDO ANIMACIONES*/
 
- #mision-vision .card-group .card:hover{
-    background: rgba(24,35,97,0.5);
-    transition: all 0.5s ease-in;
-    font-style: oblique
+#mision-vision .card-group .card:hover {
+  background: rgba(24, 35, 97, 0.5);
+  transition: all 0.5s ease-in;
+  font-style: oblique
 }
+
 #noticias .jumbotron:hover {
-    background: rgba(24,35,97,0.5);
-    transition: all 0.5s ease-in;
+  background: rgba(24, 35, 97, 0.5);
+  transition: all 0.5s ease-in;
 }
- .img-estandares{
-     height: 100px;
- }
- 
+
+.img-estandares {
+  height: 100px;
+}

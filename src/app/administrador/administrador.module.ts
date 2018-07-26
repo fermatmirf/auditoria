@@ -14,6 +14,7 @@ import { EditarJornadaComponent } from './editar-jornada/editar-jornada.componen
 import { ListarJornadaComponent } from './listar-jornada/listar-jornada.component';
 import { UserGuard } from '../services/user.guard';
 import { UserService } from '../services/user/user.service';
+import { LoginGuard } from '../services/login.guard';
 //servicios
 
 @NgModule({
@@ -24,6 +25,6 @@ import { UserService } from '../services/user/user.service';
     AngularFontAwesomeModule
   ],
   declarations: [InicioAdminComponent, LoginComponent, AgregarJornadaComponent, EditarJornadaComponent, ListarJornadaComponent],
-  providers:[UserService, UserGuard]
+  providers:[UserService, UserGuard,LoginGuard]
 })
 export class AdministradorModule { }

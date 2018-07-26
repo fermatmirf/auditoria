@@ -2,4 +2,28 @@
 *{
     font-family: Roboto, sans-serif;
 }
+@font-face {
+  font-family: MyriadProRegular;
+  src: url(/../../assets/fonts/Myriad\ Pro\ Regular.ttf);
+}
+@font-face {
+  font-family: Goca;
+  src: url(/assets/fonts/GOCA\ LOGOTYPE\ BETA.ttf);
+}
+@font-face {
+  font-family: GeomanistRegularItalica ;
+  src: url(/assets/fonts/Geomanist-Regular&Italic/Webfont/Geomanist-Regular-Italic-Webfont/geomanist-regular-italic-webfont.ttf);
+}
+@font-face {
+  font-family: GeomanistRegular ;
+  src: url(/assets/fonts/Geomanist-Regular&Italic/Webfont/Geomanist-Regular-Webfont/geomanist-regular-webfont.ttf);
+}
 
+.navbar {
+    background-color: white;
+    font-family: MyriadProRegular;
+  }
+  
+  .navbar a {
+    color: orangered;
+  }
