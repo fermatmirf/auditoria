@@ -50,19 +50,19 @@
   
   <div class="row pb-5" id="noticias">
       <div class="col-3">
-        <div *ngFor="let noticia of noticias" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <a class="nav-link active" id="v-pills{{i + 1}}" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">{{noticia.titulo}}{{i + 1 }}</a>
+        <div *ngFor="let noticia of noticias;let z = index" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a (click)="cambiarEstado()" class="nav-link active" id="v-pills" data-toggle="pill" href="#v-pills{{z}}" role="tab" aria-controls="v-pills-home" aria-selected="true">{{noticia.titulo}}{{z }}</a>
         </div>
       </div>
-      <div class="col-9">
-        <!-- <div *ngFor="let noticia of noticias" class="tab-content" id="v-pills-tabContent">
-          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <div class="col-9" *ngIf="apretado == 1" >
+        <div *ngFor="let noticia of noticias; let i = index" class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills{{i}}" role="tabpanel" aria-labelledby="v-pills-home-tab">
               <h4 id="panel1" class="font-weight-bold">{{noticia.titulo}}</h4>
               <div class="view overlay my-4">
                   <img src="{{noticia.imagen}}" class="img-fluid" alt="">
               </div>
               <p class="lead">{{noticia.cuerpo}}</p>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

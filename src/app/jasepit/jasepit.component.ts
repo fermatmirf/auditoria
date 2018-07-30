@@ -28,14 +28,10 @@ export class JasepitComponent implements OnInit {
         else{
           this.jornada = response.jornada;
           this.status = 'success'
-          console.log(this.jornada);
         }
       }, error => {
-        var errorMessage = <any>error;
-        console.log(errorMessage);
-        if (errorMessage != null) {
-          this.status = 'error';
-        }
+        console.log(error);
+        
       });
   }
 }

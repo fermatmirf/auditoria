@@ -30,7 +30,26 @@
         </div>
 
         <div class="col-md-6 col-sm-12 mt-4 mb-4">
-          
+           <div class="table-responsive">
+                  <table class="table table-sm table-hover">
+                    <thead class="thead-dark">
+                      <tr class="text-center">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Url</th>
+                        <th scope="col">Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody  *ngFor="let organizador of organizadoresTable" (click)="onSelectTableOrganizador(organizador)">
+                      <tr class="text-center">
+                        <td>{{organizador.nombre}}</td>
+                        <td>{{organizador.url}}</td>
+                        <td class="text-center">
+                          <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeOrganizadorOfTable(organizador)"></fa>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
         </div>
         <div class="col-md-6 col-sm-12 mt-4 mb-4">
           <label>Expositores:</label>
@@ -56,7 +75,7 @@
                   <td>{{expositor.apellido}}</td>
                   <td>{{expositor.procedencia}}</td>
                   <td class="text-center">
-                    <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeExpositorrOfTable(organizador)"></fa>
+                    <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeExpositorOfTable(expositor)"></fa>
                   </td>
                 </tr>
               </tbody>
@@ -85,7 +104,7 @@
                   <td>{{tematica.tema}}</td>
                   <td>{{tematica.titulo}}</td>
                   <td class="text-center">
-                    <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeTematicaOfTable(organizador)"></fa>
+                    <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeTematicaOfTable(tematica)"></fa>
                   </td>
                 </tr>
               </tbody>

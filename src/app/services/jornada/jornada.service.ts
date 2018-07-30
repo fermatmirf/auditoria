@@ -36,7 +36,7 @@ export class JornadaService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Authorization', this.userService.getToken());
 
-    return this.http.get(this.urlLocal + 'ultimajornada', { headers: headers });
+    return this.http.get(this.url + 'ultimajornada', { headers: headers });
   }
   getJornadas(id): Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/json')

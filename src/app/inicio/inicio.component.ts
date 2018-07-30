@@ -13,6 +13,7 @@ export class InicioComponent implements OnInit {
   public noticias:string[];
   public i: number;
   public j : number;
+  public apretado : number;
   constructor(
     private inicioService:InicioService,
     private _route: ActivatedRoute,
@@ -23,6 +24,9 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
     console.log('llegue hasta aqui oninit');
     this.cargarNoticias();  
+  }
+  cambiarEstado():void{
+    this.apretado = 1;
   }
   cargarNoticias():void{
     this.inicioService.getNoticias().subscribe(
