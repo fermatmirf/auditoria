@@ -20,12 +20,12 @@
   
   
 .navbar {
-  background-color: white;
+  background-color: rgba(191, 28, 28, 0.5);
   font-family: MyriadProRegular;
 }
 
 .navbar a {
-  color: orangered;
+  color: whitesmoke;
 }
 
 .slider-1,
