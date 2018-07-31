@@ -24,10 +24,12 @@
 
 .navbar a {
   color: orangered;
+  cursor: pointer;
 }
 
 .slider-1,
 .slider-2,
+.slider-3,
 .slider-4,
 .slider-5,
 .slider-6,
@@ -42,14 +44,6 @@
 .slider-3 {
   background:whitesmoke;
 
-}
-
-.slider-4 {
-  height: 100vh;
-}
-
-.slider-5 {
-  height: 100vh;
 }
 
 .footer {
@@ -71,7 +65,7 @@
   color: orangered;
   border-bottom:  solid 1px orangered;
 }
-.card-deck .card:hover{
+.card-deck .card img:hover{
   background: rgba(3, 37, 231, 0.462);
 }
 
@@ -93,3 +87,36 @@
   color: #F05F40 !important;
 }
 
+/* sector que es*/
+#primera-seccion{
+  background: url("../../assets/images/header.jpg") no-repeat center center;
+          background-size: cover;
+          -moz-background-size: cover;
+          -webkit-background-size: cover;
+          -o-background-size: cover;
+  }
+.btn {
+  font-weight: 700;
+  border: none;
+  border-radius: 300px;
+  font-family: GeomanistRegularItalica;
+  font-style: oblique;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+}
+
+.btn-primary {
+  background-color: #F05F40;
+  border-color: #F05F40;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  color: #fff;
+  background-color: #ee4b28 !important;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
