@@ -1,6 +1,4 @@
-#que-es {
-  font-family: GeomanistRegularItalica;
-}
+
 @font-face {
     font-family: MyriadProRegular;
     src: url(/assets/fonts/Myriad\ Pro\ Regular.ttf);
@@ -20,43 +18,38 @@
   
   
 .navbar {
-  background-color: rgba(191, 28, 28, 0.5);
+  background-color: white;
   font-family: MyriadProRegular;
 }
 
 .navbar a {
-  color: whitesmoke;
+  color: orangered;
 }
 
 .slider-1,
-.slider-3,
+.slider-2,
 .slider-4,
+.slider-5,
+.slider-6,
+.slider-7
   {
+  background:orangered;
   text-align: center;
-  font-family: GeomanistRegularItalica;
+  font-family: MyriadProRegular;
 }
 
-.slider-1 {
-  background: white;
-}
-
-.slider-2 {
-  background: #b80d57;
-  font-family: GeomanistRegularItalica;
-}
 
 .slider-3 {
-  background: #e03e36;
-  height: 100vh;
+  background:whitesmoke;
+
 }
 
 .slider-4 {
-  background: #ff7c38;
   height: 100vh;
 }
 
 .slider-5 {
-  text-align: center;
+  height: 100vh;
 }
 
 .footer {
@@ -66,23 +59,6 @@
   padding: 10px;
 }
 
-#imagen3,
-#imagen4 {
-  height: 100vh;
-}
-
-#imagen1,
-#imagen3,
-#imagen4 {
-  background: rgba(191, 28, 28, 1);
-  background: -moz-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(191, 28, 28, 1)), color-stop(100%, rgba(24, 35, 97, 1)));
-  background: -webkit-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
-  background: -o-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
-  background: -ms-linear-gradient(left, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
-  background: linear-gradient(to right, rgba(191, 28, 28, 1) 0%, rgba(24, 35, 97, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf1c1c', endColorstr='#182361', GradientType=1);
-}
 
 #parrafo1,
 #parrafo3,
@@ -91,11 +67,12 @@
 }
 
 /*DEFINIENDO ANIMACIONES*/
-
-#mision-vision .card-group .card:hover {
-  background: rgba(24, 35, 97, 0.5);
-  transition: all 0.5s ease-in;
-  font-style: oblique
+.navbar a:hover{
+  color: orangered;
+  border-bottom:  solid 1px orangered;
+}
+.card-deck .card:hover{
+  background: rgba(3, 37, 231, 0.462);
 }
 
 #noticias .jumbotron:hover {
@@ -106,3 +83,13 @@
 .img-estandares {
   height: 100px;
 }
+/*PARTE DE LOS ESTANDARES*/
+#estandar-img{
+  width: 100%;
+  max-width: 200px;
+  height: 100px;
+}
+.text-primary {
+  color: #F05F40 !important;
+}
+
