@@ -22,12 +22,14 @@ import { TematicaService } from './services/tematica/tematica.service';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { JasepitComponent } from './jasepit/jasepit.component';
+import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    JasepitComponent
+    JasepitComponent,
+    SobreNosotrosComponent
   ],
   imports: [
     SimpleSmoothScrollModule,

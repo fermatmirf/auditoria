@@ -35,15 +35,29 @@
 .slider-6,
 .slider-7
   {
-  background:orangered;
   text-align: center;
   font-family: MyriadProRegular;
 }
-
-
+.slider-1 {
+  background:orangered;
+}
+.slider-2 {
+  background:whitesmoke;
+}
 .slider-3 {
   background:whitesmoke;
-
+}
+.slider-4 {
+  background:whitesmoke;
+}
+.slider-5 {
+  background:whitesmoke;
+}
+.slider-6 {
+  background: midnightblue;
+}
+.slider-7 {
+  background:whitesmoke;
 }
 
 .footer {
@@ -69,20 +83,12 @@
   background: rgba(3, 37, 231, 0.462);
 }
 
-#noticias .jumbotron:hover {
-  background: rgba(24, 35, 97, 0.5);
-  transition: all 0.5s ease-in;
-}
+
 
 .img-estandares {
   height: 100px;
 }
 /*PARTE DE LOS ESTANDARES*/
-#estandar-img{
-  width: 100%;
-  max-width: 200px;
-  height: 100px;
-}
 .text-primary {
   color: #F05F40 !important;
 }

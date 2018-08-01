@@ -1,0 +1,27 @@
+#borde{
+    border-radius: 35px 35px 35px 35px;
+    -moz-border-radius: 35px 35px 35px 35px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    border: 0px solid #000000;
+    background-color: white;
+}
+
+#bordenavbar{
+  border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border: 0px solid #000000;
+}
+
+#fondo{
+  background: rgb(201, 61, 12);
+}
+
+.navbar{
+  background: transparent;
+  width: 300px;
+}
+
+#menu{
+  background: red;
+}

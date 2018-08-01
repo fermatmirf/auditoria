@@ -53,4 +53,7 @@ export class InicioComponent implements OnInit {
   verMas():void{
     this._router.navigate(['jasepit']);
   }
+  sobreNosotros():void{
+    this._router.navigate(['sobre-nosotros']);
+  }
 }
