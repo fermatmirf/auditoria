@@ -39,7 +39,7 @@
   font-family: MyriadProRegular;
 }
 .slider-1 {
-  background:orangered;
+  background:white;
 }
 .slider-2 {
   background:whitesmoke;
@@ -83,8 +83,6 @@
   background: rgba(3, 37, 231, 0.462);
 }
 
-
-
 .img-estandares {
   height: 100px;
 }
@@ -100,7 +98,16 @@
           -moz-background-size: cover;
           -webkit-background-size: cover;
           -o-background-size: cover;
-  }
+          width: 100%;
+}
+#cuarta-seccion{
+  background: url("../../assets/images/header.jpg") no-repeat center center;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  width: 100%;
+}
 .btn {
   font-weight: 700;
   border: none;

@@ -10,8 +10,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav mr-auto ml-auto text-center">
-      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> Qué es?</a>
-      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'mision-vision'" [duration]="500"> Mision, Vision y Objetivos</a>
+      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'que-es'" [duration]="500"> ¿Qué es?</a>
+      <a class="nav-item nav-link que-es" SimpleSmoothScroll [scrollTo]="'mision-vision'" [duration]="500"> Misión, Visión y Valores</a>
       <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'servicios'" [duration]="500">Servicios</a>
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">JASEP-IT</a>
@@ -27,35 +27,37 @@
 <!-- Fin del NavBar -->
 
 <!-- SECCIÓN 1 -->
-<div class="container-fluid slider-1 mt-5" id="que-es">
+<div class="container slider-1 mt-5 pt-5 pl-0 pr-0" id="que-es">
   <div id="primera-seccion" class="mt-5 text-white">
-      <h1 class="card-title pt-1" style="font-size: 6.5vh">
-        <img src="../assets/images/asep.png" class="mt-5 img-fluid">
-        <br>
-        <strong>Auditoría, Seguridad y Peritaje</strong>
-        <br>
-        <strong>de Tecnologías de la Información</strong>
-      </h1>
-      <p class="pb-5" id="parrafo1">
-        <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas y de
-        la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar actividades
-        vinculadas con el cumplimiento de estándares de seguridad.
-        <br>Enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación Tecnológica de la
-        Universidad Tecnológica Nacional, Facultad Regional de Tucumán.
-      </p>
+    <h1 class="card-title" style="font-size: 6.5vh">
+      <img src="../assets/images/asep.png" id="img-slider-1" class="mt-5 img-fluid">
+      <br>
+      <strong>Auditoría, Seguridad y Peritaje</strong>
+      <br>
+      <strong>de Tecnologías de la Información</strong>
+    </h1>
+    <p class="pb-5" id="parrafo1">
+      <br> Grupo que surge como una necesidad concreta de la sociedad y la región con respecto a estas tres disciplinas y de
+      la inquietud de profesionales, impulsadas por la propuesta de las autoridades de la UTN - FRT de desarrollar actividades
+      vinculadas con el cumplimiento de estándares de seguridad.
+      <br>Enmarcado en la Dirección de Proyectos Informáticos, dependiente de la Secretaría de Vinculación Tecnológica de la
+      Universidad Tecnológica Nacional, Facultad Regional de Tucumán.
+    </p>
   </div>
 </div>
 
 <!-- FIN SECCIÓN -->
 
 <!-- SECCIÓN 2 -->
-<div class="container-fluid slider-2 mt-5" id="mision-vision">
+<div class="container slider-2 mt-5 pl-0 pr-0" id="mision-vision">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="../assets/images/mision.jpg" alt="First slide">
-        <div class="carousel-caption d-none d-md-block text-body">
-          <h2>MISION</h2>
+        <img class="d-block w-100" src="../assets/images/mision.jpeg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>
+            <strong>MISION</strong>
+          </h2>
           <p>Trabajar en favor de la prevención y el desarrollo integral de la Seguridad Cibernética, a través de programas
             y proyectos que permitan convertirnos en aliados con Organismos Públicos y Privados.</p>
         </div>
@@ -92,18 +94,18 @@
     </a>
   </div>
   <div class="text-white text-md-right py-2 px-2">
-    <a class="btn btn-primary btn-xl js-scroll-trigger"  (click)="sobreNosotros()" >Más Sobre Nosotros...</a>
+    <a class="btn btn-primary btn-xl js-scroll-trigger" (click)="sobreNosotros()">Más Sobre Nosotros...</a>
     <!--<button type="button" class="btn btn-link text-white" >Más Sobre Nosotros >></button>-->
   </div>
 </div>
 <!-- FIN SECCIÓN -->
 <!-- SECCIÓN 3 -->
-<div class="container-fluid slider-3 mt-5 border border-primary" id="servicios">
+<div class="container slider-3 mt-5 pl-0 pr-0" id="servicios">
   <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mt-5">
-          <h2 class="section-heading">Nuestros Servicios</h2>
+          <h2 class="mt-5 section-heading">Nuestros Servicios</h2>
           <hr class="my-4">
         </div>
       </div>
@@ -197,32 +199,34 @@
 
 <!-- FIN SECCIÓN -->
 <!-- SECCIÓN 4 -->
-<div class="container-fluid slider-4 mt-5 border border-primary" id="jasepit">
-  <div class="row">
-    <div class="col-md-12">
-      <div class=" text-center py-5 px-4 my-5">
-        <div>
-          <h1 class="card-title pt-3 mb-5" style="font-size: 6.5vh">
-            <strong>JASEPIT - Jornada de Auditoría, Seguridad y Peritaje Informático</strong>
-          </h1>
-          <p class="mx-5 mb-5" id="parrafo3">Jornada donde se invitan expertos locales, nacionales e internacionales en las temáticas mencionadas para que compartan
-            sus experiencias con asistentes de las provincias del Norte Grande y de diferentes claustros (docente, no docente,
-            estudiantes y graduados) así como también aquellos que provienen de empresas públicas, privadas y público en
-            general.
-          </p>
-          <button class="btn btn-primary" (click)="verMas()">Ver Jornada</button>
-        </div>
-      </div>
-    </div>
+<div class="container-fluid slider-4 mt-5 pl-0 pr-0" id="jasepit">
+  <div class="text-white text-center pb-5 pt-4 " id="cuarta-seccion">
+    <h1 class="card-title mt-5 pt-3 pb-3 mb-5" style="font-size: 6.5vh">
+      <strong>JASEPIT - Jornada de Auditoría, Seguridad y Peritaje Informático</strong>
+    </h1>
+    <p class="mx-5 mb-5" id="parrafo3">Jornada donde se invitan expertos locales, nacionales e internacionales en las temáticas mencionadas para que compartan
+      sus experiencias con asistentes de las provincias del Norte Grande y de diferentes claustros (docente, no docente,
+      estudiantes y graduados) así como también aquellos que provienen de empresas públicas, privadas y público en general.
+    </p>
+    <button class="btn btn-primary" (click)="verMas()">Ver Jornada</button>
   </div>
 </div>
 <!-- FIN SECCIÓN -->
+<!--ul.galeria>li*4>a>img-->
 <!-- SECCIÓN 5 -->
-<div class="container-fluid slider-5 mt-5" id="noticias">
-  <h1 class="card-title pt-3 mb-5" style="font-size: 3.5em">
+<div class="container slider-5 mt-5" id="noticias">
+  <h1 class="card-title mt-5 mb-5" style="font-size: 3.5em">
     <strong>Noticias</strong>
   </h1>
-  <div class="row pb-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <a class="twitter-timeline" data-width="500" data-height="491" data-theme="light" data-link-color="#E95F28" href="https://twitter.com/Asepit?ref_src=twsrc%5Etfw">Tweets by Asepit</a>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <a class="twitter-timeline" data-width="500" data-height="500" data-link-color="#E95F28" href="https://twitter.com/SeguInfo?ref_src=twsrc%5Etfw">Tweets by SeguInfo</a>
+    </div>
+  </div>
+  <!-- <div class="row pb-5">
     <div class="col-3">
       <div *ngFor="let noticia of noticias" class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <a class="nav-link active" id="v-pills{{i + 1}}" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
@@ -230,7 +234,9 @@
       </div>
     </div>
     <div class="col-9">
-      <!-- <div *ngFor="let noticia of noticias" class="tab-content" id="v-pills-tabContent">
+      </div>
+    </div> -->
+  <!-- <div *ngFor="let noticia of noticias" class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
               <h4 id="panel1" class="font-weight-bold">{{noticia.titulo}}</h4>
               <div class="view overlay my-4">
@@ -238,36 +244,14 @@
               </div>
               <p class="lead">{{noticia.cuerpo}}</p>
           </div> -->
-    </div>
-  </div>
+
 </div>
-<!-- Nav tabs -->
-<!-- <ul *ngFor="let noticia of noticias" id="navbar-example1" class="nav nav-tabs nav-justified indigo mb-4 mx-0">
-    <li class="nav-item">
-        <a class="nav-link active" href="#panel1">{{noticia.titulo}}</a>
-    </li>
-</ul> -->
-<!--Spied element-->
-<!-- <div *ngFor="let noticia of noticias" class="scrollspy-example z-depth-1 mt-4" data-spy="scroll" data-target="#navbar-example1" data-offset="0">
-    <h4 id="panel1" class="font-weight-bold">{{noticia.titulo}}</h4>
-    <div class="view overlay my-4">
-        <img src="{{noticia.imagen}}" class="img-fluid" alt="">
-    </div>
-    <p class="lead">{{noticia.cuerpo}}</p>
-</div> -->
-<!--/.Spied element-->
-
 <!-- FIN SECCIÓN -->
-
-
-
-
-
 
 <!-- SECCIÓN 6 -->
 <div class="container-fluid slider-6 mt-5 p-0" id="estandares">
   <h1 class="card-title pt-5 mb-5 text-white" style="font-size: 3.5em">
-    <strong>Estandares de Auditoria de Sistemas de Informacion</strong>
+    <strong>Estándares de Auditoría de Sistemas de Información</strong>
   </h1>
   <!-- Card deck -->
   <div class="card-deck pl-4 pr-4 border-0">
@@ -419,8 +403,8 @@
 <!-- FIN SECCIÓN -->
 <!-- SECCIÓN 7 -->
 <div class="container slider-7 mt-5" id="estandares">
-  <h1 class="card-title pt-3 mb-5 font-italic" style="font-size: 3.5em">
-    <strong>Big Four en Auditoria de Sistemas de Informacion </strong>
+  <h1 class="card-title pt-3 mb-5 " style="font-size: 3.5em">
+    <strong>Big Four en Auditoría de Sistemas de Información </strong>
   </h1>
   <div class="d-flex justify-content-lg-center">
     <div class="p-1 ml-5 mb-5">
