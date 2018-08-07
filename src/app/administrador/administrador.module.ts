@@ -1,7 +1,7 @@
 //cosas de angular
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 //rutas
@@ -22,7 +22,8 @@ import { LoginGuard } from '../services/login.guard';
     CommonModule,
     FormsModule,
     AdminRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ReactiveFormsModule
   ],
   declarations: [InicioAdminComponent, LoginComponent, AgregarJornadaComponent, EditarJornadaComponent, ListarJornadaComponent],
   providers:[UserService, UserGuard,LoginGuard]

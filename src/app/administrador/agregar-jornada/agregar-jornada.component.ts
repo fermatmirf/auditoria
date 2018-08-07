@@ -35,8 +35,11 @@ export class AgregarJornadaComponent implements OnInit {
   public tematicaSelectedTable: Tematica = undefined;
 
   public expositoresTable: Expositor[];
+  public expositoresTableIds: string[];
   public tematicasTable: Tematica[];
+  public tematicasTableIds: string[];
   public organizadoresTable: Organizador[];
+  public organizadoresTableIds: string[];
 
   constructor(public jornadaService: JornadaService, public userService: UserService, public expositorService: ExpositorService, public organizadorService: OrganizadorService, public tematicaService: TematicaService) {
     /* this.organizadors = organizadoresMock;
@@ -45,10 +48,13 @@ export class AgregarJornadaComponent implements OnInit {
     this.expositoresTable = [];
     this.organizadoresTable = [];
     this.tematicasTable = [];
+    this.tematicasTableIds = [];
+    this.organizadoresTableIds = [];
+    this.expositoresTableIds = [];
     this.identity = userService.getIdentity();
     console.log(this.identity);
 
-    this.jornada = new Jornada(1, '', 1, '', '5b557799621c5e25cb620d84', '5b55d5aab3e341230ed3098f', '5b5558bfa3ead918a6bb5368', '', this.identity._id);
+    this.jornada = new Jornada('', '', 1, '',this.organizadoresTableIds, this.expositoresTableIds, this.tematicasTableIds, '', this.identity._id);
   }
 
   ngOnInit() {
@@ -102,13 +108,12 @@ export class AgregarJornadaComponent implements OnInit {
       });
   }
   getOrganizadores(id): void {
-    console.log('lalalal');
-    
     this.organizadorService.get(id).subscribe(
       response => {
         console.log(response);
         this.organizadors = response.organizadores;
         console.log(this.organizadors);
+        console.log("edehdyehdyehydhedhyhyedyhedyhedyhdehyedyh");
         
       }, error => {
 
@@ -140,25 +145,33 @@ export class AgregarJornadaComponent implements OnInit {
 
   //Funciones para anadir seleccionado de combo box a tabla
   addToTableExpositor(expositor: Expositor): void {
-    if (this.expositoresTable.indexOf(expositor) == -1) {
+    if (this.expositoresTableIds.indexOf(expositor._id) == -1) {
+      this.expositoresTableIds.push(expositor._id);
       this.expositoresTable.push(expositor);
+      console.log(this.expositoresTableIds);
+      
     }
     else {
       alert('Ya agrego al expositor');
     }
   }
   addToTableOrganizador(organizador: Organizador): void {
-    if (this.organizadoresTable.indexOf(organizador) == -1) {
+    if (this.organizadoresTableIds.indexOf(organizador._id) == -1) {
       this.organizadoresTable.push(organizador);
+      this.organizadoresTableIds.push(organizador._id);
+      console.log(this.organizadoresTableIds);
     }
     else {
       alert('Ya agrego al organizador');
     }
   }
   addToTableTematica(tematica: Tematica): void {
-    if (this.tematicasTable.indexOf(tematica) == -1) {
+    console.log('El array de tematicas ids es:'+this.tematicasTableIds);
+    
+    if (this.tematicasTableIds.indexOf(tematica._id) == -1) {
+      this.tematicasTableIds.push(tematica._id);
       this.tematicasTable.push(tematica);
-      console.log(this.tematicasTable);
+      console.log(this.tematicasTableIds);
 
     } else {
       alert('Ya agrego la tematica');
@@ -168,16 +181,21 @@ export class AgregarJornadaComponent implements OnInit {
   //Funciones para remover el seleccionado de la tabla
   removeExpositorOfTable(expositor: Expositor) {
     var pos = this.expositoresTable.indexOf(expositor);
+    var pos1 = this.expositoresTableIds.indexOf(expositor._id);
     this.expositoresTable.splice(pos, 1);
+    this.expositoresTableIds.splice(pos1,1);
+
   }
   removeTematicaOfTable(tematica: Tematica) {
     var pos = this.tematicasTable.indexOf(tematica);
+    var pos1 = this.tematicasTableIds.indexOf(tematica._id);
     this.tematicasTable.splice(pos, 1);
+    this.tematicasTableIds.splice(pos1,1);
   }
   removeOrganizadorOfTable(organizador: Organizador) {
     var pos = this.organizadoresTable.indexOf(organizador);
+    var pos1 = this.organizadoresTableIds.indexOf(organizador._id);
     this.organizadoresTable.splice(pos, 1);
-
+    this.organizadoresTableIds.splice(pos1,1);
   }
-
 }

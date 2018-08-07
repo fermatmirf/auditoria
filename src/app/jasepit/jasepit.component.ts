@@ -12,7 +12,7 @@ export class JasepitComponent implements OnInit {
   public status : string;
 
   constructor(private jornadaService: JornadaService) { 
-    this.jornada = new Jornada(1,'',1,'','','','','','');
+    this.jornada = new Jornada('','',1,'',[],[],[],'','');
   }
 
   ngOnInit() {
@@ -23,10 +23,14 @@ export class JasepitComponent implements OnInit {
     this.jornadaService.getUltimaJornada().subscribe(
       response => {
         if(!response){
+          
           this.status = 'error'
         }
         else{
+
           this.jornada = response.jornada;
+          console.log('la jornada es: '+this.jornada.organizadores);
+          
           this.status = 'success'
         }
       }, error => {

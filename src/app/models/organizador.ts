@@ -1,6 +1,6 @@
 export class Organizador {
     constructor(
-        public _id: number,
+        public _id: string,
         public nombre: string,
         public url: string,
     ){}

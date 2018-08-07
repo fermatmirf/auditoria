@@ -1,3 +1,212 @@
-<p>
-  listar-jornada works!
-</p>
+<div class="container-fluid pt-5">
+  <div class="jumbotron m-0 text-center border border-info rounded">
+    <h1 class="display-5">Jornadas Registradas</h1>
+    <p class="lead">Listado de las jornadas registradas.</p>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-sm table-hover">
+      <thead class="thead-dark">
+        <tr class="text-center">
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Año</th>
+          <th scope="col">Contacto</th>
+          <th scope="col">Expositores</th>
+          <th scope="col">Tematicas</th>
+          <th scope="col">Organizadores</th>
+          <th scope="col">Sede</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let jornada of jornadas" class="text-center" (click)="onSelectTableJornada(jornada)">
+          <th scope="row">1</th>
+          <td>{{jornada.nombre}}</td>
+          <td>{{jornada.anio}}</td>
+          <td>{{jornada.contacto}}</td>
+          <td>
+            <tr *ngFor="let expositor of jornada.expositores">
+              <td>{{expositor.nombre + ' '+ expositor.apellido}}</td>
+            </tr>
+          </td>
+          <td>
+            <tr *ngFor="let tematica of jornada.tematicas">
+              <td>{{tematica.tema}}</td>
+            </tr>
+          </td>
+          <td>
+            <tr *ngFor="let organizador of jornada.organizadores">
+              <td>{{organizador.nombre}}</td>
+            </tr>
+          </td>
+          <td>{{jornada.sede}}</td>
+          <fa name="fas fa-edit" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalLong"data-toggle="modal" data-target="#exampleModalLong" (click)="onSelectTableJornada(jornada)"></fa>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Editar Jornada</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+          </div>
+          <div class="panel-body">
+            <form [formGroup]="jornadaForm" novalidate>
+              <div class="form-group">
+                <label class="col-md-4">Nombre:</label>
+                <input type="text" class="form-control" formControlName="nombre" #nombre [(ngModel)]="jornadaEditada.nombre">
+              </div>
+              <div *ngIf="jornadaForm.controls['nombre'].invalid && (jornadaForm.controls['nombre'].dirty || jornadaForm.controls['nombre'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="jornadaForm.controls['nombre'].errors.required">
+                  Nombre es requerido
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4">Fecha:</label>
+                <input type="date" class="form-control" formControlName="anio" #anio [(ngModel)]="jornadaEditada.anio">
+              </div>
+              <div *ngIf="jornadaForm.controls['anio'].invalid && (jornadaForm.controls['anio'].dirty || jornadaForm.controls['anio'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="jornadaForm.controls['anio'].errors.required">
+                  Fecha es requerida
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4">Sede:</label>
+                <input type="text" class="form-control" formControlName="sede" #sede [(ngModel)]="jornadaEditada.sede">
+              </div>
+              <div *ngIf="jornadaForm.controls['sede'].invalid && (jornadaForm.controls['sede'].dirty || jornadaForm.controls['sede'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="jornadaForm.controls['sede'].errors.required">
+                  Sede es requerido
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4">Contacto:</label>
+                <input type="text" class="form-control" formControlName="contacto" #contacto [(ngModel)]="jornadaEditada.contacto">
+              </div>
+              <div *ngIf="jornadaForm.controls['contacto'].invalid && (jornadaForm.controls['contacto'].dirty || jornadaForm.controls['contacto'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="jornadaForm.controls['contacto'].errors.required">
+                Nombre es requerido
+              </div>
+            </div>
+              <div class="form-group">
+                <label class="col-md-4">Organizadores:</label>
+                <select class="form-group">
+                  <option *ngFor="let organizador of organizadors" [value]="organizador" (click)="onSelectOrganizador(organizador)">{{organizador.nombre}}</option>
+                </select>
+                <span *ngIf="organizadorSelected" class="btn btn-sm btn-primary" (click)="addToTableOrganizador(organizadorSelected)">Agregar Organizador</span>
+                <div class="table-responsive">
+                  <div class="table-responsive">
+                    <table class="table table-sm table-hover">
+                      <thead class="thead-dark">
+                        <tr class="text-center">
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Url</th>
+                          <th scope="col">Accion</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let organizador of jornadaSelectedTable.organizadores" (click)="onSelectTableOrganizador(organizador)">
+                        <tr class="text-center">
+                          <td>{{organizador.nombre}}</td>
+                          <td>{{organizador.url}}</td>
+                          <td class="text-center">
+                            <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeOrganizadorOfTable(organizador)"></fa>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4">Expositores:</label>
+                <select class="form-group">
+                  <option *ngFor="let expositor of expositors" [value]="expositor" (click)="onSelectExpositor(expositor)">{{expositor.nombre}}</option>
+                </select>
+                <span *ngIf="expositorSelected" class="btn btn-sm btn-primary" (click)="addToTableExpositor(expositorSelected)"> Agregar Expositor</span>
+                <div class="table-responsive">
+                  <table class="table table-sm table-hover">
+                    <thead class="thead-dark">
+                      <tr class="text-center">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Procedencia</th>
+                        <th scope="col">Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let expositor of jornadaSelectedTable.expositores" (click)="onSelectTableExpositor(expositor)">
+                      <tr class="text-center">
+                        <td>{{expositor.nombre}}</td>
+                        <td>{{expositor.apellido}}</td>
+                        <td>{{expositor.procedencia}}</td>
+                        <td class="text-center">
+                          <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeExpositorOfTable(expositor)"></fa>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4">Tematicas:</label>
+                <select class="form-group">
+                  <option *ngFor="let tematica of tematics" [value]="tematica" (click)="onSelectTematica(tematica)">{{tematica.titulo}}</option>
+                </select>
+                <span *ngIf="tematicaSelected" class="btn btn-sm btn-primary" (click)="addToTableTematica(tematicaSelected)">Agregar Tematica</span>
+                <div class="table-responsive-md">
+                  <table class="table table-responsive table-sm table-hover">
+                    <thead class="thead-dark">
+                      <tr class="text-center">
+                        <th scope="col">Tematica</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let tematica of jornadaSelectedTable.tematicas" (click)="onSelectTableTematica(tematica)">
+                      <tr class="text-center">
+                        <td>{{tematica.tema}}</td>
+                        <td>{{tematica.titulo}}</td>
+                        <td class="text-center">
+                          <fa name="fas fa-ban" class="btn btn-sm btn-danger" (click)="removeTematicaOfTable(tematica)"></fa>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="fom-group">
+                <button (click)="updateJornada()"[disabled]="jornadaForm.invalid" class="btn btn-primary">Actualizar</button>
+              </div>
+            </form>
+            <div *ngIf="status == 'success'" class="alert alert-success">Se actualizó la jornada correctamente.</div>
+            <div *ngIf="status == 'error'" class="alert alert-danger">Hubo un error al actualizar la jornada.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+</div>

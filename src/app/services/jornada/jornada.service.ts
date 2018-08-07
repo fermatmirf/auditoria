@@ -27,16 +27,20 @@ export class JornadaService {
     return this.http.post(this.url + 'jornada', params, { headers: headers });
   }
   updateJornada(jornada: Jornada): Observable<any> {
+    console.log("La jornada esta q viene de listar-jornada-component:");
+    console.log(jornada);
     let params = JSON.stringify(jornada);
+    console.log("esto es el params");
+    console.log(params);
     let headers = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Authorization', this.userService.getToken());
-    return this.http.put(this.url + 'jornada/' + jornada._id, params, { headers: headers });
+    return this.http.put(this.url + 'update-jornada/' + jornada._id, params, { headers: headers });
   }
   getUltimaJornada(): Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Authorization', this.userService.getToken());
 
-    return this.http.get(this.url + 'ultimajornada', { headers: headers });
+    return this.http.get(this.url + 'ultima-jornada', { headers: headers });
   }
   getJornadas(id): Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/json')
