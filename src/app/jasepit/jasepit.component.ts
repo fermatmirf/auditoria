@@ -9,33 +9,35 @@ import { Jornada } from '../models/jornada';
 })
 export class JasepitComponent implements OnInit {
   public jornada: Jornada;
-  public status : string;
+  public status:string;
 
-  constructor(private jornadaService: JornadaService) { 
-    this.jornada = new Jornada('','',1,'',[],[],[],'','');
+  constructor(public jornadaService: JornadaService) { 
+    this.jornada = new Jornada('', '', 1, '',[], [], [], '', '');
+
   }
 
   ngOnInit() {
-    this.cargarUltimaJornada();
+  this.getJornadas();
   }
 
-  cargarUltimaJornada(){
-    this.jornadaService.getUltimaJornada().subscribe(
-      response => {
-        if(!response){
-          
-          this.status = 'error'
-        }
-        else{
+  getJornadas(): void {
+    var id;
+    this.jornadaService.getUltimaJornada().subscribe(response => {
+      if (!response) {
 
-          this.jornada = response.jornada;
-          console.log('la jornada es: '+this.jornada.organizadores);
-          
-          this.status = 'success'
-        }
-      }, error => {
-        console.log(error);
-        
-      });
+        this.status = 'error'
+      }
+      else {
+
+        this.jornada = response.jornada;
+        this.status = 'success'
+      }
+    }, error => {
+      var errorMessage = <any>error;
+      console.log(errorMessage);
+      if (errorMessage != null) {
+        this.status = 'error';
+      }
+    });
   }
 }

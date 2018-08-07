@@ -24,7 +24,7 @@
         <div class="col-md-6 col-sm-12 mt-4 mb-4">
           <label>Organizadores:</label>
           <select class="form-group">
-            <option *ngFor="let organizador of organizadors" [value]="organizador" (click)="onSelectOrganizador(organizador)">{{organizador.url}}</option>
+            <option *ngFor="let organizador of organizadors" [value]="organizador" (click)="onSelectOrganizador(organizador)">{{organizador.nombre}}</option>
           </select>
           <span *ngIf="organizadorSelected" class="btn btn-sm btn-primary" (click)="addToTableOrganizador(organizadorSelected)">Agregar Organizador</span>
         </div>

@@ -23,7 +23,6 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     console.log('llegue hasta aqui oninit');
-    this.cargarNoticias();  
   }
   cambiarEstado():void{
     this.apretado = 1;

@@ -1,139 +1,402 @@
-<div class="container-fluid">
-  <div class="row">
-    <!--Jumbotron-->
-    <div class="jumbotron text-center">
+<body>
 
-      <!--Title-->
-      <h4 class="card-title font-bold pb-2">
-        <strong>JORNADA DE AUDITORIA, CIBERSEGURIDAD Y PERITAJE INFORMATICO</strong>
-      </h4>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-      <!--Card image-->
-      <div class="view overlay my-4">
-        <img src="../../assets/images/logoasep.png" class="img-fluid" alt="">
-        <a href="#">
-          <div class="mask rgba-white-slight"></div>
-        </a>
-      </div>
-
-      <h5 class="indigo-text font-bold mb-4"></h5>
-
-      <p class="card-text"></p>
-
-    
-    </div>
-    <!--Jumbotron-->
-  </div>
-  <div class="row">
-    <div class="col">
-      <!-- Classic tabs -->
-      <div class="classic-tabs">
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-fill bg-primary"  role="tablist">
-          <li class="nav-item">
-            <a class="nav-link text-body" data-toggle="tab" href="#panelSede" role="tab"><h3>Sede</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-body" data-toggle="tab" href="#panelOrganizadores" role="tab"><h3>Organizadores</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-body" data-toggle="tab" href="#panelExpositores" role="tab"><h3>Expositores</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-body" data-toggle="tab" href="#panelTematicas" role="tab"><h3>Tematicas</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-body" data-toggle="tab" href="#panelEnvianos" role="tab"><h3>Envianos tu paper</h3></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-body" data-toggle="tab" href="#panelContactos" role="tab"><h3>Contacto</h3></a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" >
+      <span class="d-block d-lg-none">JASEP-IT</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid  mx-auto mb-2 btn btn-light" [routerLink]="['inicio']" [routerLinkActive]="['active']" src="../assets/images/logoasepicono.ico" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'about'" [duration]="500" id="cursor">¿Qué es JASEPIT?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'jornada2018'" [duration]="500" id="cursor">Jornada 2018</a>
+        </li>
+        <ul class="acorh nav-item">
+          <li class="nav-item"><a class="nav-item nav-link" href="#opcion1" id="cursor">Jornadas</a>
+            <ul>
+              <li><a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'jornada2010'" [duration]="500" id="cursor">JASEP 2010</a></li>
+              <li><a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'jornada2011'" [duration]="500" id="cursor">JASEP 2011</a></li>
+              <li><a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'jornada2012'" [duration]="500" id="cursor">JASEP 2012</a></li>
+              <li><a class="nav-item nav-link" SimpleSmoothScroll [scrollTo]="'jornada2016'" [duration]="500" id="cursor">JASEP 2016</a></li>
+            </ul>
           </li>
         </ul>
-
-        <div class="tab-content border-right border-bottom border-left rounded-bottom">
-          <!--Panel 1-->
-          <div class="tab-pane fade in show active" id="panelSede" role="tabpanel">
-            <p class="text-center">{{jornada.sede}}</p>
+      </ul>
+    </div>      
+  </nav>
+    <div class="container-fluid p-0" id="contenedor1">
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h2 class="mb-0">Información de            
+          </h2>
+          <h1><span class="text-primary">JASEPIT</span></h1>
+          <div class="subheading mb-5">Jornada de Auditoría, Seguridad y Peritaje Informático
+            <a href="mailto:name@email.com"></a>
           </div>
-          <!--/.Panel 1-->
-          <!--Panel 2-->
-          <div class="tab-pane fade" id="panelOrganizadores" role="tabpanel">
-              <div class="table-responsive">
-                  <table class="table table-sm table-hover">
-                    <thead class="thead-dark">
-                      <tr class="text-center">
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Url</th>
-                      </tr>
-                    </thead>
-                    <tbody *ngFor="let organizador of jornada.organizadores">
-                      <tr class="text-center">
-                        <td>{{organizador.nombre}}</td>
-                        <td><a href="">{{organizador.url}}</a></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
-          <!--/.Panel 2-->
-          <!--Panel 3-->
-          <div class="tab-pane fade" id="panelExpositores" role="tabpanel">
-              <div class="table-responsive">
-                  <table class="table table-sm table-hover">
-                    <thead class="thead-dark">
-                      <tr class="text-center">
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Procedencia</th>
-                      </tr>
-                    </thead>
-                    <tbody *ngFor="let expositor of jornada.expositores">
-                      <tr class="text-center">
-                        <td>{{expositor.nombre}}</td>
-                        <td>{{expositor.apellido}}</td>
-                        <td>{{expositor.procedencia}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
-          <!--/.Panel 3-->
-          <!--Panel 4-->
-          <div class="tab-pane fade" id="panelTematicas" role="tabpanel">
-              <div class="table-responsive">
-                  <table class="table table-sm table-hover">
-                    <thead class="thead-dark">
-                      <tr class="text-center">
-                        <th scope="col">Tematica</th>
-                        <th scope="col">Titulo</th>
-                      </tr>
-                    </thead>
-                    <tbody *ngFor="let tematica of jornada.tematicas">
-                      <tr class="text-center">
-                        <td>{{tematica.tema}}</td>
-                        <td>{{tematica.titulo}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-          </div>
-          <!--/.Panel 4-->
-          <!--Panel 5-->
-          <div class="tab-pane fade" id="panelEnvianos" role="tabpanel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
-              molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
-              odit minima.</p>
-          </div>
-          <!--/.Panel 5-->
-          <!--Panel 6-->
-          <div class="tab-pane fade" id="panelContactos" role="tabpanel">
-              <p class="text-center">{{jornada.contacto}}</p>
-          </div>
-          <!--/.Panel 6-->
+          <p class="mb-5" id="texto">El evento más significativo es una Jornada anual de ponencias - JASEP-IT - donde se invitan expertos locales, nacionales e internacionales en las temáticas mencionadas para que compartan sus experiencias con asistentes de las provincias del Norte Grande y de diferentes claustros (docente, no docente, estudiantes y graduados) así como también aquellos que provienen de empresas públicas, privadas y público en general.</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
+      </section>
 
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="jornada2018">
+        <div class="my-auto">
+          <h1>JASEPIT</h1>
+          <h2><span class="text-primary">2018</span></h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="container">
+  <h4>AGENDA</h4>  
+  <div class="subheading mb-5">Presentamos los disertantes y los temas que se trataran durante la Jornada 2018
+          </div>          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <!-- Classic tabs -->
+                <div class="classic-tabs">
+          
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-fill bg-primary"  role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link text-body" data-toggle="tab" href="#panelSede" role="tab"><h3>Sede</h3></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-body" data-toggle="tab" href="#panelOrganizadores" role="tab"><h3>Organizadores</h3></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-body" data-toggle="tab" href="#panelExpositores" role="tab"><h3>Expositores</h3></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-body" data-toggle="tab" href="#panelTematicas" role="tab"><h3>Tematicas</h3></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-body" data-toggle="tab" href="#panelEnvianos" role="tab"><h3>Envianos tu paper</h3></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-body" data-toggle="tab" href="#panelContactos" role="tab"><h3>Contacto</h3></a>
+                    </li>
+                  </ul>
+          
+                  <div class="tab-content border-right border-bottom border-left rounded-bottom">
+                    <!--Panel 1-->
+                    <div class="tab-pane fade in show active" id="panelSede" role="tabpanel">
+                      <p class="text-center">{{jornada.sede}}</p>
+                    </div>
+                    <!--/.Panel 1-->
+                    <!--Panel 2-->
+                    <div class="tab-pane fade" id="panelOrganizadores" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover">
+                              <thead class="thead-dark">
+                                <tr class="text-center">
+                                  <th scope="col">Nombre</th>
+                                  <th scope="col">Url</th>
+                                </tr>
+                              </thead>
+                              <tbody *ngFor="let organizador of jornada.organizadores">
+                                <tr class="text-center">
+                                  <td>{{organizador.nombre}}</td>
+                                  <td><a href="">{{organizador.url}}</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                    </div>
+                    <!--/.Panel 2-->
+                    <!--Panel 3-->
+                    <div class="tab-pane fade" id="panelExpositores" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover">
+                              <thead class="thead-dark">
+                                <tr class="text-center">
+                                  <th scope="col">Nombre</th>
+                                  <th scope="col">Apellido</th>
+                                  <th scope="col">Procedencia</th>
+                                </tr>
+                              </thead>
+                              <tbody *ngFor="let expositor of jornada.expositores">
+                                <tr class="text-center">
+                                  <td>{{expositor.nombre}}</td>
+                                  <td>{{expositor.apellido}}</td>
+                                  <td>{{expositor.procedencia}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                    </div>
+                    <!--/.Panel 3-->
+                    <!--Panel 4-->
+                    <div class="tab-pane fade" id="panelTematicas" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover">
+                              <thead class="thead-dark">
+                                <tr class="text-center">
+                                  <th scope="col">Tematica</th>
+                                  <th scope="col">Titulo</th>
+                                </tr>
+                              </thead>
+                              <tbody *ngFor="let tematica of jornada.tematicas">
+                                <tr class="text-center">
+                                  <td>{{tematica.tema}}</td>
+                                  <td>{{tematica.titulo}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                    </div>
+                    <!--/.Panel 4-->
+                    <!--Panel 5-->
+                    <div class="tab-pane fade" id="panelEnvianos" role="tabpanel">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                        molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                        odit minima.</p>
+                    </div>
+                    <!--/.Panel 5-->
+                    <!--Panel 6-->
+                    <div class="tab-pane fade" id="panelContactos" role="tabpanel">
+                        <p class="text-center">{{jornada.contacto}}</p>
+                    </div>
+                    <!--/.Panel 6-->
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="jornada2010">
+      <h1 style="text-align: center;">Jornada</h1> <h2 style="text-align: center;"><span class="text-primary">2010</span></h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 img-fluid" src="https://lh3.googleusercontent.com/S7CLvj4HvC9XWRdyftZpzHI7JNgv8YeK3rB3CUzfrD6P9EmWLmCnG1ZygYiZjb8PtfX6vY2vmjqeg-QY82Sk0flXhyi53BbRwFzDHAVfmvJOInfbuVieGXCfNn4p87baPDCAnF0HLQ5iPZ0X2fXiaAUiU9oP18rxDCkYMCdk2Al0kVPo2QdQ3CsZ1muG4c70nFwwBctw6Xik8VG8SSoaNUhFbKdx_7lIqj6qnZryyhzRPqjPDQezeJUdXUPIPdczTijnBoLgBvI-nzKN9yTDuqUVJIKmH6CB9LOkXDGzZhkhwtC7hdoRVvPoEswycSdXHMexVyK49G6TRpivXLDwyzXSFGlxg3L7AiiaEesiFGjqpj8XzxEG5CjJn_CyDHGMq8YxRzhmjedupegItMPhxTWekg_RpEuHulZEsuAIe7pVssPk9VfPdUFTTkbnAsxZM8MBC1g9WWwUuzSsLS7p_Hh7ARTd5-MfXnKwLRl2hQjDWaRd0CQpHAX0P0u4oc-5t5W-izgIYs5gYWi4An8NEwZWM1nt4mZCSN0DmsHWK7IXUObMyGql9Gw0Pr7yRIbprAZj4WnI_3QeGml-TNlf41lqJ-D5-Fa3C0zALKvLOmYTAZtNgRKiXYkTJ9Co8-0CGPN88RyYoi5GS_OC948Ah5LVUFKfDPMT=w782-h509-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/tnYs-7gkqHeiMenNhWdy_9GiiROEWZrAVN85db8oCXtWdyNtbJ5nxLSSJkcwUyCsU-tgtX1m-BBAvqNP5pX3lxyTfWxqUEa9_IV3pvt2ENVokik4BTDw409wyZns4TgV0kbRgvoaXJgl46M_uw8XTe_mfrBcGcMt6_8oGM9otqjgAOODzyJex4422wbV6jVbnl6wbFR17swMkkissG0mrhNwNAHJBRtbi_wbyubMJw6RrIOdoS2Z5tpzl5CW-3d2Yud8q7xsd_aVZJMjq9rz0_2a8ghQXwqt0daA483ovUNRGYLyr8wiv4SZU5RhAqokZYG69G85SulJ53yntkJANnp77f99KorTWH4p9GjoI2MNvQTaUwUtbXWz07SgnydgOh1aszL7J9p-tU2SUnlry_aY24MD09OM6Na9KAD5DolcieMyv2Mb3c-8SDWhzZKxuYO4g_Qd5afaUM4xNXh3laOCGkwpKpOQEkdBC_44xoDj4Lg0fCI6fu7xW5M8SpvKBxbp6mgWu61fyh-YjzEPsB8E9uyyLPEVWNOvhfu4MgAw0bB43VBMIx4bMu_BLjLaD9LU0iPEWmVn_VB6bx_OLyNtMVpCNBiIZ88njR5574m8E4V-XSbzqVaYVwKHDH5cTtsQNNv2gfk-CrSi6Hqa_lvxicW8dZgA=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/gjF8wn_pt7Ue7a3OyB7SRc3SMNPMwwENBaPAAhFUzLkaXSSdRYAw-5d2l8Z6TXatTpwVZEohaUPfKSuuV7LxfnKtbeIkB0Z6JPy9Di9OKL1-7steu-GBWBvVXHOeRmo9WXwat_K4EgFHr1D958STNZtTM1SPKKVwSdaxaitqc2FYrKAtEr9sAE50VXiIJlEqQ6WQcX-Fzg9SkGE4P86EuJExxGmuNp2ORrW1k6zaK8m_0PrXcxa8BUw4fsA3SjfRm2oMS4tEQyQC-4gQW2TBzLARQ8iRxCTI9BMqgfihoSHR_454fCo0bhq42LF3c1-pa_fDvETeB3cFCrzAh2Gt850Bi9gz7EgAsfkuz8YvKnaGI7dbTaagNZAAjm04H1H1sWtPHg7z8-_64LRCLD3S8H4fPNQeeWN0xa1ouQcTv6REGhYLrVkGSu_TZE6ozHfdZ_rGA5uLZWJL6l0qSgchzPdpUP9LH4uVO2LAFQ5fhPeMBKYbw4INjckz-48sjaMVYJEAD24JAe_Q8FkLST37KUuIKCQ8EcZHaBFKbRgcQQ-nWS5oKNR7YjW_ROv46V7KyeAOcjLQUaZWVdhYrQK63hrJzXQY42QZzKewwMwZEuT7ZV9oJ-pytyoEsHxsGJ1Ccoz0pNIZ5SzGCimbZWIbQB6ZzNtpyPIF=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/jrD5YM6hdpnugezkzS9awK7XM-WJjyIKilOUlXO3KABGOagYYfOx2rVypQ7WFKG-75XO0p8Rwo71778_GvdxulSOju7-Gu8p1M7yaAmBTaOtOYItQq4s-x8gADxFaePSngKWGhq3nK6aZQXce6gyNHCHwuwxj3GTtBvpJAcMXJIN6daoAxdd7Y6KYa2P1X45U9CGa6TZ8n4O6woZcX7AI3wsDYNj26UK4oXJuFas5XxOJzg7LeFC5LTBhtNKAtA5RvIzOkPysS5MwyOxSWzbO49XIIQXXb2zsq6Kf154kOKju1z8wiQg18xZT7CXgG3lEck7HuZlpSRnckUHAzLJfxQ-CczgUILeaD4FhwJHynnVvuJyCgvrB3FX9CXP-HtHsh1P4XDD4DzkFawGfQp_RnbatZyHS3iD71sNXXyPsp398iRUrKNkVmIluxUn7WVnZjtM8pZS3MHQyeyxAtewzaSCxPqe2O8MKScHvFk7QcY6ZRCFsCf9Xpan1pLJxNvuhfC028Zl14V5grMpJZ7IMPpbIFCL1Nu6tx9rQp8WKtKH_sU0rpQrfSnvhdOab8-ftiH2f2NFv73hQbsvb_4G1KMeSURU2sR7UzAJzvArxdlDdy-_s4nzBDeKRlGldt7nqOiYlaSXaeboiizngVSAF-8xL3aHQ46H=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/SDCk2g0ya_SPDGyZnIjnw_zrGsZqoPGZZJQdOu1Wm-5vvC9ymYMf5XWpMSf7ejCcqA6fKjIunYSRPyRS_2bf-IYTGurxO7iNlwZSztDtEQTkFNsnHtC8LdYdeV08Kqn2q2pY6AYr66S3Sb1-u8ytWyHgbB6yn0hKYxctu-SuP-n2lIcQihSVmgY2j1WzsMvzT-TN__g7sc_t42PIgaUZgTQ46HDIYcUI2L32sTQbqA8dwgGRtl_ksROzBLeonpeE49Vm-20UcZuX8U-oH55a_46tSBzpjoS-NwzIJp5rAbLZ8TUCunMV3YNwewqOuI9PcN0BHIndGOT2Yr6M0oupLrLBeTZ2AoAE9e2ATOT8hY6WCItb3Far4qI9yJ4ZMZ5zl9cjCYpXTdK2TI6xuSpfUIKU--65sXTwYtWxvAHAEtXiINT5Eg95uG0u0zJ8WAsbmrVIAQKy5TMQ9zwFlrfJNVhkol4nqgBrUcdp0pB_ypVGLfq26oW4jg9U58cGBZqR1HE_Z6nDg-H1q8dvFerzp8WwdEgwJeaQdvGCibZcLR2FnxpHEBWuKJGS1Tkoqs3MOvmaxmjuKoIXWzUSW-LghR-LDkqUzYH63voBTWk4I823NJOY6DT-DVaRbsYEuU8QTsforwg9zidi9emi15-kj9aiVx6hXG-w=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/tT4c_NwWqo-e_lORSNCCH-w2Ke-DRFNqUGYEThX9UOw68tAZ0vIVxoB-1XcvglIDHb_Y4HtifW1kTlggjaTFv32BEWG_fn-j4ex7-a1oWBIIm9KT_FeuAyuZ03dCduU6UNVjJJ4wVqI3COURVFglHEJZUEEGYWFCxaOSPuzGo1VuDgftr7I2qcLA6VBzLr1Cp0lHRgAeQIdvz3RXH26sLcBot1rKoTg5o_vqTQjBPn3HDrip673OZUWrL-kYdYp1WAr0gvqNH6Zo8JefOUU5C5lWOEq4v5-cVIMBOaY4_zbVJCQz81aPgw_PSPrF7wy4lWwSPLauRhm95YEze9jxiMs0OkcHJkccV3D8rVd3Zdw6e6nCwc1-6J8V3DLpDYLzRBNLSNaMSYoT_MVbb8btC8RLgV69I8piU0w5qyilUP4kIgn9u602CCfPgUSY1vCfadXy691x1FgyEd6GExmuZ-1MuRl3ChRu66cKD22qRaqCMoxVnMaPqVs-w_v7XKIycxDBcNmaUxQqDmKMeYYbMGNURSmsXqRkSfkeWyjbNu8rJZR1bITA2TRKHSOBrF9qYnemsxaY3In7qT6WKVUCzRQI-x36cBQNDfD5tq3brIdou5Aejm5M9XbZjLdw35mRxjBzJRDYYjbU3c7xl8zu3AjpE8Ot4aPl=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/K9fiAWz0_AySN5-hRIDsEXYgPeIHvZBUXzIFkVNWxPbAz4FIR0XYCAuuPc1vTjATF1EF2jHdrbZjM-x03qJ2idd1haqahBrt31r1K5HltQrT5p2ZSCfvFyP-c0j9zDW37BUPikKLN1IkzpVK4ENbTQM_uBwk4inqW0K9gkAwsjtSNR336Zt1W8wyoOIe5AUU9rqsHRO03n4xW-WGdd3Jz-_N11JLLHkn92lR_q392rWkyeOwdaN6N6USAe4EM958acqZuu458ZZOBCzxaQUKdU0fjvG83RAK8EXrVXlK-bZ_hdwgff4mMPXTaFJOQeIqjDq5W7iY-WX0-rpYFIuhPZ1KDNXTiRr5vRm35PxGZ6eaVM9fgynqBocFO7v7tOl0w4Gpw4yyjAgIqJ1sMeHOKDHrax23B6rIQ-1tFVqH5Tg_SqECb_wG65NCzEeZy5mapnVTrJaXPBOLKlcmY7PCyJzndyO_ysNSLIfi-E6Tce08WLzkqUpG7HnoCi52mlVA2Pp6bPehvSUn4ohEZQfDcPOnYUAS7mXNzyh7Nq0lwTujzEAYiYW-L5ghCytCMnQDxEc5u1x3qftxvWyOQcq6AhPTUVgwksgumrv9cCUHjkFi384e9mBj_LKEURbTWxUuglT1lf8KI6V8raq-WpzAH7s9vi5LFwM9=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/3ZatABzGE739E50uwmBaZNmdJ8DydaACTb10hWaWjQ1C3ZzGThV6YMvcUvZsj11ir6h8gCBf5X0Vwg_reFLAhijMMk4XowyjC8f2NQlmT1ULzHzz_rQOTLawUdQUoc75_K3mgOLxK7S--EH1-uHdei83ZTPe14Lrtpka96Fi5Xj_CAckb99KqXb4D4_l1eEfwZi-4kezOODnU7zfu8SmFmqYOnSYzFoMOFL5YIwql9ETY7tyV6z7LYSSds5XQCcXov05eIFf_CuSi7IlL9aw1CTRTrO48rMcDyhrZr2YiYKCaLD-wYVxB4MBtHgqseeX0GsQvqiJolj4q3V0mQvIu7WGlG2nS4ljey3VJR2IxXfxq8pabMV1VMDk1JpS_37hd8lh_wmA73zjPrjnOkytAm6chG-w22oZyZiREksgqr9YGlCWa_7YEiQY1hgn5eERpFYOKcOxOKhzL5yT5Ta2nhxUERlY6ZfVKgFnOzxiV63Nui-0LJJ12xUhK9kQOa64I6V8hVrpwC62EvNpjallmsLDUQXultWnHJEyAZUTIbFIGKbZDhKujNvmc51uv-5WqC0Uq3s2_742TVccjXS3JLQRK-4J4pWf7_w4yGiXwy1olcwaYNIas1HNdnbFww8A3TY4vwo4_WXWYj9OQ3UpZcmDk1Fj0ZCt=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/FlqvyQOhh3zA0ft3YI_OZeo0rio-LwEbuMXTNlfjaK-dkCaqHO7yBDgVwT12NgiIkkTDzYI21QFrLSx-BlGwxs1CYkSQTelEJv_wkKfeAqjyEUVzQksyBwW-Mm55tw7_QHjvGrgANFoCrsloZ_S8qykxbGYRuG4QPB_-4X8C3Qt-5r9Nl4kVGVBae9sfI0-2pX0qF0cLQDiqozXpScEWN9zX_uguwY9Mpxj7MJyWbNPKF8GY-1P_1q0uHEj2KwT0nW5PhEBcxovsleU5Xe27koQSqb82lHcPpA8SzMjcfC_zTWyf56zK790vR1l--MFFkXOK-iOncbsAXacsuKYmUXDXEV8W5gbRgs-bTv23XkJbcOci2x7Fk-q07hSEt9F2esY0uAIJDchZ2QoqbKBOTQ5IUC3OxpxxxyK706-0TsiW2B7U8jJIodRV9lrcAjpCZFWllnlZpijupEWu-EKOC_dbKgQOb_SPIrP7xdVWLkTu6YQ8ELitmqDBEffC1kDCV8lI44W6lyd4pIjQlJmj2egsflfLmeiOTsufen95CTxLcE9z3Neen4HM1AK32CRfYqiCy4xWeNKbcnGHlo_eXQfb9DyjfCr8I3ROtHS1ZFz2gxlnTfgUwxqEfb9DME7xjHN6vO842iGwA9CQLcpNY8KVAMo9qIhF=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/ocnsBLr6NbEmVoNY_Q2yQvn_u6fhIaD0D1bxbCpjCAHFML2BgDSDXtgJG-Q2zu7B96qPNYh0K3_u207_pOffx2xL_ov2SJI0Wd-NmD5eG6hh0HEIatzcCPc7ebDfhL4F7ofnrZkXbkFCwVSHQIIX61U-TbQkZu14yGbHxQ3pbrK2Q6duMn1ee33_0k48ogXm1gNuBaWnUKgBXUdQLmc0Ns92LSp7L5puKRYvbpSca060TJIP2fjFBj6fvOwaDtwyNXii0IjT-9ncts0i3zZyWzW4YC7WV001-TjWyFKDNpL_iwjMqWaw0jwqwCYpgfGI5XQXic47_VHYAAzz-IumiqPMdgKO2FwZVBj9opPRlHm_6RsAIMW7jgsQFvmqO5_FNaUWtX19wAufCZaMJ9LErlbRXeCveimG541YFcwZLH7Pa1JbL1poBMbhlz_OjV2jE0hFf4vs5umIbjJo52oDb5SuIbqeJkU7xTORBxKvHYua9eOpSbCa8QAINcZ5L0Vy5Av3VOXqZeLWMibRvFdBuKE0RM1TGJR1eVlpOAjyodgwp3wsdMlUvt4Y5PVmPD5GZ5-Rv9ZwBSXtKpWfmkmlw6b_CXYKdG3KvEBXqsbBY44IS8y3EGfZl5IXSQOosVHJCgYjAZrOzc6TaPTHK55G1mwt48m3Lwa4=w847-h635-no">
+          </div>
+          </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="jornada2011">
+      <h1 style="text-align: center;">Jornada</h1> <h2 style="text-align: center;"><span class="text-primary">2011</span></h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 img-fluid" src="https://lh3.googleusercontent.com/lRfL-DV6-imioRinc1JGiu5EP2mpJJP0RMRIddfmk4tMgypA4HhwJskgvAxmSGKHVu8iNb8J39Tov4vAJQWeY3TcGJ5KZGLqaWEE1Y_1GUFi_DZ7KjQapcp7ZccBduju4yrNpP_3jlpXLRRZBtPGp__8sPyPY9tY2b1RQiHq31eSE-qf4bXJaq-oujHJyNTcIYqBHwC4CNN0Ys7VeML3v6gRYZqH9BvqXrVNB3R3YljyF2k0ojZyms1KwcPKkfj8H5k2brdQTQuVMOH5Eiv10SA8HIuuRqDliskdmvRcAvGtHPYZu16J-PJp_ie5Ho_JS40a7DH3jyrKuf-3AIACRIl_XQaZ_p4OOoYRYeg3qP2IigJjlfsVR7_AE7Iv49oTBuUApG5ffhmcuEHv4pSeLXCDBzEIxgjVB4KjK3yEe87Ca4EBtxpX_bwb5ImsS-D_18ZPV_OHSMSq6TG6Kqx9Q7DWhFEiuWRxqASao_ejLhVqQS_xrEXCgSBhwxkjt_XuzlbExdhOZw-ZFA9HgMRlZcnXjXHiBhuGqGCLt0BEWV8JVa6RotG_pc3grAa7z3bSV9FPkPg4pJGBmlLpjXxyFBcIbH-1NJy7HHVwp9Q2AjJcU_Qo8MlWK8Xd5l7dqSxq2NEdZJKSn3K1_L4ls8hoGJVYvapsZxF4=w782-h509-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/2IojASSHbnta3DykdjRK4RocY6XJvBub074BkQQC61bGcUOtndjoIkqRLDUirSwcoNMI-n3S-CkCwLmj4lJDUj7TmmIYWnFGBvuxjsIU_5zSL9P3in2dT1W0bqJ4k-CRyQNmN5-RcVAAo4ZDUZUOO4BRoKOumk0HdkenYjNnAkNGSCVbfP3nIui25_bWa0ncUl2GaeoqI5qsDh7R3Yo_6I8iHqrZUjJc1rA7XOHSLN-goaQ_z1mq9xINmxre5E4kIfvvyTnYQo6LPzvhGrWaDnsWdmA9U6pBAE9J1CFGjH6IGsrMolb94YT8acR91BWcrqUqvDt_YpvDvA-ZuL9K0uK3y-w1Fos32rdc6iRS-jZ5UXLWet7zF841t2_DwujiGfxy9Ouff5yFiMuCh7U0CthKWJG7xa4p_NXPA_wrwrsULiEEH72vTnL_IGJ5ysHS6PZLDUUMnouY9kgStJSFJDPk-N-iPptaHoX92d7YTgxA2U4pqWbvpeCcS0h17Y5h33VYT6HN0lhR-H8orWoukp3XM1OfioZz4NaRsu2txW9X2IYZ8ILankJgnMBXZUGjqD-Mc5HRHLEgFVx7eNJi9ZWLLhGNsggc5k-zh0NQh0g25VaL9IdcQy8OUnQa8q-KjPu6QCvaA7pJfzHGR3zJm0r0mch0vFjI=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/UdGBI51IHdDhEiQHArxZIbyWnV8Y8lY7vo7u0urKo8Ksm6Vyew_7aqmH0bKrvKnYEaKVzBd5DelkheO5lyMa3fL67H72bY5osKHJFbhoG-0E0rl4Q72f-ua7h9LH8bhJ4VyQ-eBVJwOtsbla3O5ZlLwg3cpTI4Rwv-fVkMCR_Zi6KAgvzWbGqIkbr1zkAoN36XHuXqsroo-W0MypW2VXS6QlFQnLC7PrbH7x9zzgh-xE9UknKUI5ZzXF-hax04Esl6lAcM4i3LAZxm9-xeMJ06HpbsYMcez800ZneO1J-rGgeO0cGLVtg75JwAZOeaF24z-qrcA3pu3bmLinncu9HkThZdzjR5n5N9YBngCSb4rliFr8yP7cUGAlcAouH_VKY3w6cmzQUyPMzSpx_YVTZzTFyNGT6YDnetFaQt2pYsDLKSjLtsjF2i51l0pcS7FwWfcaUKjBjE1b1XmXY8ip8WCb-IUTNGkA2hFgITUUombscAdo1VKR3XX1KvEXcrJSqLKYKxoMBAUtNCdMvGHCuMyGOgNKzfVQhdtPF7mlIBy552dzQPmJEugh4-4ZGgN96IfJEpn8Vg_mrwlpfU0AY0Erax1BzROhS1dmnBk7pLimCuCBVhjOTLcbltOFrDeuRIqm_juC_Y8IZWToUPsxIfZoa87JyNx6=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/3CJvvJmvgBMtuS-JtQAGncISsL1aMW05CNMlxdUDiwyyAyNniv45d5bYwGAkWKwuvPt7nFQD_wFevoZdYFuTZyjGGBxuQ1szXzAjuP3XQ0L9JNhnzpS461wRgbeN0wr8BfkGV-6vDQusKqqWoLFU9Vqp6rJmdml8osDTMNsOJ7UMplXV2F_DkIj01WQlnpFR04XUF2mpzjbFKgbpBZXJNR9HJAmM-rX032pecjxDo5NZe4Q1Bz2g3V6AbAhCOMehT-5Becox0wvcIuVedGlKjxqYd1mQ1RXPfueIpeVY_wdeii0BCjQrdLy9M2dbheZRLfwJ3o3iT2oYfpDGy1vpmgwRxxh2eq5grfOPNixmvV3-lm7fj324AonAry3hYaRjH8NYE1ktCENVDiFvHKPNTYGepwhlMMw9_Hyp-1nYSTyqkkaPQxeDBmrX2Nr_p6D7XlgMFp6VondEuSrb0rS6UJvf_pChtZzRbhosJZ8lOrKSSnqjrh5QpeI5LYVRnSMsyBVAOCFrg0QeEZDairYCzpEhxI12I9dZ6bazv-JYWezr498NbIlBIRVodP5Zs0oUh4mxmqBJZslhNJgvSyxRUkOKtW7aWJcNkRjaXfJUhRC7kW82S0OiScn2bi4A4PMjaxiW6kdR8OYfzKaP25gRYv3_Kebq0kdY=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/giElnQL7verebK3FTRxUCd_RRbNdKwr3S_DIrEgzW0ujT0pl-qCZqJ_P5UZr8V4-PChO9IXqfvYfKYGEPaq1EOOgQrCOjUvlrY905aqe-u8GkpVoBqN2si2sseAANLYXlGHg_VbKK-lQ68315C_nX5yv3VbS3PD-jGgBwTqTbuK0gyxGCwY3xPutjYVociuqLWa9p09W2yhBf-F9NtsBYAcR4-0Rs4b5Su3bSpHvCjwdKgq4mVL5D2FNYotnkx7Q5fO6_mBlghLgmrl9XKj2Ax1dgs-7NYpHinm3-OQoFu8OVNsogGlGMIuptEVRZVwWsfnaxQBHK-1FwiQ2RY9WxKwv2Mc3qWi_lC4zxvYXaaCjBCISOvIkBn9iKWisJmyAoA-DH1ZoOS67pRmWleeRzLBT1XTYWvksh6gBizcaarnhXBW49N9-DTjkXTYGNJ5f6qwo44pn3LIy1NodmvcJdq3VqD0b9EpNHM2uDY-M8Eh6OjcUrad6r5pupa_GWB4ZHTEbsPUTOAYY4t96mtI7WwRtgRklcjGUtER2VmW45E4cJGp-ajP0YOse438GvYhLgRm2w7vBpFk6qyo94yabpDCw4ESLtP1bcFZKsuBqfgYhAVnaZtuYAvTQqcxIDV0_nOWuBmI9xM_-yZzWQW5JMPi9jL3x_Stl=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/4e4F_rjFysxYKRnax1lNsQYhZC5h9ZU-TfFETv-7Vpl62xTDxXSyfu0NFjFEym6w3DesEPBxOOAPHm15Crdm8YvM4ZqxA5yCqQYVQwsrpWR4ZjJ6wrxTzY7y5WJLelzSNh1zG9kPj7HPjXvCtBJTIQbr96vICPomCqXIEn7RPZ13-z-2_p5N1Qv37x8gk_afssnJL2vYyt9xesfSRFTTVsyfaZCeEd_A_D5c9p6ObXBqZ5IJEW87S9fEr9jM0YmLCLCHOIp8Ahqfgvw4yQKFXPTZpaYPlVceMotQlmD1aAg8L7yKypYslIdl0QDRSGdXaYONDvifHzhfpNiFhD_y-mI4VFUJipEdhuWu0QP4NqnJNDsg7aRqwT9HilnmyHoG1j8z3U30FGGXE-Ax2mNXrJDenSVPw8TxvjmvcquFOsbNo3AbciWjBQnDtNAwYwXsW7B5lf2dNFVl8Z7ZPGKog_IUsp6uNWC22uw2StnNLeUEryKkDNyPueZAOKp5oRDJ9iqqzLX3yOkiJyTfDMMwscjJqOVIgCvdUqHUrbuwh4AHkv4P4knm5eJGABRFg12fBSlSRnjA8z1Pp7Q4VLlqPmxerMFMPcvAipfVLOmCP9o4CxPH1faHbnBHOd-ssycRCdpkSoD5RfywdE8ge2jwhNswg36jdbbY=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/UlFMN_fXqVaYbdVV9aqKgBAmqLOJmFOTIMNikEgVFIDIoNRyF_dsdf-RrTpT0eHkny2XDYaW-vc3bIyqbmUuFK5ByQFQ2iHzWUBhMjgrj_0Wh_HsQjQDhLpjA1Msi7gxtRXa9k1kT2cHZYgyDXApfk4dj_H8dDEWGowLouj8bdb7SqyACsE4pcM3-YuY0Au4fV6Dz-oUpAUNEhrBLeYjzKi9R7z9O-vcAnJ58mac_4NOxCSS4IeDw40DFwKgBvJXFYQqt1T-i1zAr3UcEsO4FlGvmfkNf4Iz-KqlIjFLrwItdS3QsiWMbwgmW8Cn4en7db-jaB4AW2hsv_kOK6AGdkqrxh8KKxw0dUPdBO-RVhJhgx5tHbQtvnLYyXSU7_xpm9ul5Bgh8tX_stddntdLYQLyVPZj2OScHj1VRvxfqaLxOdDMZ1_gXasC7eP1HHVw18yIAWAqw0m48qKsKZGpxFVvjV--HpUcoOWfBkYlcHXddMXslovDhgHGA3pWW1TWYcoxR8Y6YPB-xLh2Drj97oATkIplIEKwsV47bCAUJp9Mhvv6M333pnEpu_FBSZOG3Hgp4Jii6ul_MbKGP25AIHbjTk4_0PGbT7C-A5gNHaxjtYqN_c_vQNe4COQVbFooCyuwe5tHeqfR-ErEC2hzc49siE7qB4rm=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/PoF3wDXvT1_GXwRr7OQ5jFJAU6fJ9lf6W0bJW0fYPTqunSkAaO1QF5Q51X5sVFNbkKVQBHqWMKNtGXtqraaPVTR-8fMF08dvYOXJxQVorkKvsO92svYl1sqyEyxx-QJaGSCo9M9HMGcE-hnek50szFV9nzEav_my51iMavC7mW3QS_gqXLwNedTjpJP5bFQtDpxV_Je0AhhdJrUWczmQpPTOfDKNuWrulibY3Xgkxjz7Qjx4B-8QJvLxbjEBEpNIqXU1dEN8kmL9rOW-7B5wnC1yXCWfxX_7r_9oANoc1E0_m7ys1ww01-8R6DPOI2J3Bpq03YG4JPUDhtb_K1EfNbI4B3TD6J-bSvDBrXmqDP7j7LszI-0EdWjJfXG9GKKFsoTuKvvN0fibb5pZ38R8WOUalD4Ryx6ebibHHddHiQXkM6j9QdhsW4bfwaxSqGmT3oycBavGCT6zRbTjUhm7yHxRIWkHNaBovD0vJjVUaVMZdQtsrtex4tB0pTDM-9hlo23lS3GY4ho7foCjgZOhCpcrq9k26GssEeYDId3ogwG4iLdOdsaRWEoUxBJrrNvBRGpus0cYVVV2n04A-W9IwDp1qE06Df8vZW2q-H9iozgpsQ13KkWIgkCHcL0y1GaJmOWngJOEclU4E9C5uTutrbUpU9-RB3Fi=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/b9szG5Rq7X9nYCbdT31K-ouRq2gGscVOgjd0t_yIn_CVYS4j86pdnqU2bIkzVaZthXZBqyH_P8iq_aaHpPucg7O2QioZd3R-slat13zu55TWX6pj5irt3RaCCTqgaC9ukdmbK10g5oYXf_qOTKONdiSQYHxQ6qhDLrRv4dHzSy_dz2_W0UEVGNluzpEubIG4k1d2TtXyKkjlmAKGmNNrkkcJSkwrg7QNGvbUQZgiNs15G-8Wac0jchkxpK6sIHuFg6j9XfbdY7JvJRm8OHY1430oUHNlW3eUniLchTDrHXg5TPNmf4FwboH0TS2n3P5YHRXwUppXRObCp4gyskD0igd3y6SlmD6jajm3NecXwsgp8JXgpTHUX5_vviwq0XZDCIfWJEfnjelrjhUvMC9BcARaSzZQxbZKSf2edQj0Ig3YeQ2M01KE0JeAjxQwYcLkl4c_7oHL9i-UDKm9S_GJGv3jOe7KdH8YHO8CLcqvAjMTOGHjFYFjX2Ne2if3WLQYytxjYHRd-PJFrvwjmwFWGYjT8KNxWzp1T9o6f6GCZkwTSPheofRA36_0VsRjLXO7iVEvmXsW31uu1MfwlcbkaCQ0B9emjyUXN47SiHLxC75ZAt4_NxyMOgTny4DMmePGRL5SM6DMAzmu9HfUgH26hIQP13lOI8PK=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/kclJAuvilXBTNcZuHfFoRuUmmUz-TkWoLRh1IbwDANTvLwjwduc8gSo4bpHbFAMczfTMiDihVGWsAGGfmkCKL9XXoItzfQ1-2-rYMJuHzzHMz9LG4-FjbixIW_z9jM4sP_CDKxbA99VLrNKZwdNTvid_4pCnf6PQxT1FP6W0Ktfvu6_n5ZQpufhodap6I3gS4yjfc8X6JeqSUK1AGuIRQEL-tGjlQIhNVjH-YQyG0vgLjryRvVvBCXTX2CvHyWV-Rad2NLvuw21v0czCrK_9TqWwavjeEGkVS8kvoKAsL2DXhsYj5g3xD7LbydgEX2WAQmIjILsIMBRY-IaWcxCl5mkVWSkZHae_H5lYeUlhnl_hMlPl7TQE9wQdEtk2Sp-9FOECkBxKPYh10g4uVO1C8ujqd31VbpD3AucOf55zSToR7my60vX4_EpZkSfX4wYrgRapA4MUuJe3t96vOoMc_Pt_Z4Aaq4PcDLr7gIqnRRkg0AargqrbDguvgS3uUSY1NYOm5BJTlFmXlDJJIX1JN9V2GNf6gzzAqOOFnf5wFvef6QLJGOdgA0Eo3wCmorT0RiPQU8eNjYXAElRww5KAUjMBKSUHtbqmb1aBL_pr5GAuBJNMvTchZac7SJF7z7CRQKUg_UTpi-g8jBOoyVER0u1jYdtrSAz6=w847-h635-no">
+          </div>
+          </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="jornada2012">
+      <h1 style="text-align: center;">Jornada</h1> <h2 style="text-align: center;"><span class="text-primary">2012</span></h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 img-fluid" src="https://lh3.googleusercontent.com/WniL2fy9Yl9ac5htGs45ZL-tyshIDINd3kadlbn0owUePURWWgWawxy5RlBgvqA8R8MAcr3wdP7gNT53SF7KnzdcgKA0YRvxiaCan54DhnA8ssDGsGvKEs3dai4Q8ZiljRyw8iC011tLVzkwsE6niopNFgunXKr1G0DXrgjAL964vRwAywWp8NPOkuB1-TMbk-S3WAOU_BkIaUjyEKn619zANQefjh04dK2e4_gYcaupeDoL1Hjt_PMeDZ3lwAbc91enbjU98LXwTtScNVb3SKMobFFOaQ4T5zyrs9aHJK4K3pDq3KukBcGEzYxcRm8_7PVzGEHQz8RII57IH2ISegSKIA8wUXJa-5Zg-mWwiMLIcSMyNaJgowkMdt_sE2y40jUlZSKtR-J9M2-O1cEsF-VG1Qq-1WVZc5JSUVjRiD8I27nCuZ7fExB-KLqca6GKigVAoykoaE9Y95VAfkT8XF9g-byyMtyquPFdSAu_SpSr7BrEIKO1-kMit2wHJ84wZ4Q9cYCY9EOgBtVahk5wXeB-USlNd1H-jDpZ7NC3cCXiDCASe-Yr5uwAEHP4pSz5nJVwrZKYWGMoAH2409pgVMc5uSFdIErXQ570MbsngFBaGsr29K0tVHvYPybQhUyKPHkyRXHBevd6ZRCihfO20htLqDpNhvCd=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/QNphGMiQxoc19I56SGkpgp138hI3qjEFWE8754JwGCAFnVI12ScKrw9--PCyEnZzhEuafwy7pQhUFa9NMAduM_5UGf8LjF4ytBIUylBatKbP4oGesTNASbcw1i6E_SWA1KZhtYSP5P-6xZhR4x7mwRuJC_1dMk5lyNjrH_PjKNVTMnV3VFT_MDK9Ga55cgUyJ-ZXfnOVIjqL3qARm7nyK7pSODN7GD6QBPyU0QPeeLEzY7fYDVjbVEK3YLtPiuv6-C0Z97XzHHetISPJpnRvoV1ioOk64Zj7aGgkoqtW9xnLw4SMzI6Yha4zOztA0_ynpx8bgoHvewqS8JQn-ZzMX2waNIGiw_EjwIe_U9zpvfFQ1Am3vqRPbFqpIWg0crCzlaz38FZobRiAtyGtIPH7na0b-SHtgtQiaa0fxZCZZ1Ti6U6kk30x4KSbprFU7F5nke79bDahH4BABMsBnZg_afIWsc1PcRiYzpH6bDW0S_bQGnpcjU0Els93yOiHbL8hWpx_wQjJcXAJV2fO1jqZvXoJcaMDhxTsMzubvBCbizpSH5fXPN_bnEPqNYTdYgUSLQK0xDh2EuoxfP7wqUqyo_Yx_6PGSv1tKBIHHzAkl16plxF8uxN0X7uV9K8p3VYBfDzUef5IFS4CShDUul6oAY5BtbylHOaY=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/Y-IN8ER7NMlWqmtW-J1D5HAsvX70-GRSUp3UY5kjUTDULidW8SMCmdruZpwAypYReNslGsobQkQhIsfmS7270b24pN26rutXJ_FfC_fsmjqPPfrVwFuiszKqx0huvtNyXdsOzbJQpMXWjYUeen-2J-aL0lMfsxAKvmodyhp7_4xHytBRqR_wfodjmTg1h1H326BXCeRW-Sc9_uzuT-_Cz2cCres0ZbmTCZ8VmrJVUGxV7y30rG-IhGwTdRDr4gYTOXbGaFGEehXH79IkeBsrJeDdiGKDNm_U15DtD9CGvuJX4efvxdr1wPvLXf9DYNtnoHNe8JsedZVfgmx1UrdlXduEOdhu_11yXd3GJ_Pym4wdPmIMgW8MEa3oGu3L-5PcnZcP0JDH2uPCs4DPhlf7CkpIcuUcdfDW7Cd0FvOivPrlas0Aw0ts_5p0SvI9v8bWl7_-o23hzLCbdQ_EHsL2DohPREOHJ8G6C9EBgB5zyROAP9wzc0WLED1m2PQvu4xqdlYwVa7W-72WbNxNbKIz3zEINWiSyBM5KFjTsbjK5j9ToTFtXaCk0rZc3Nb8jMMCG1iEjmZOFWFIKNMul-3EyO_2z4JShA_ajEL5XfesHSncg3yAht61pJHzL5F_lQfiz5cwwZGuFgaRBrZuQ-UvP6JIVLZqU3X_=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/UjvUSSGXlzJ4FhPzkmrcktKiWvS2Zpb71dq9de_680St4liBz8su-43aROWmoKgAY2fhcgtNu7FUeUD5ASSsjM-3okXiaSG37hkqjsCS8D8vrYjwJXpghLwKMl-mmLs2lwHTZShzGAyd6iTze6mLt9oISbQEigzFmzTtYtMkNGyjT0ZnIu3N6Miwo8eKYa3opbBEnSoWzXZX-d0YMLjKtRSknvWWulwBvNTAPM6YhlVEsxweXxNOtm9Kidtqf2saDGtug9LmznvaiprNznBE2rEOfFnV5e95pMao5kI8uSLfVrz0iMI0IiTzbLsxPrMqT-mC6NiYuLLIhBDVXbuPvr7wa1Tln6qdL4jej_Pckdkdw3wN9KTjEBwJAAJBAALT8K8-5EN3934PD0lJ7ixTr-0Ru3jsMc4O98aHlWBh911OyqPFALsnSshl0XkqrtQC95uOv1RN9IjE3RcpkWoXCb_G0wclzbQCbh4oj9Ecf1MVO7X5Mf2-ZzPnLn3oly7tfD_fTEEmOaTF9Kdf6uPqwz18YBCopdxZpk4wQcMo_y21-RBe66G869F9jaAPLfw8xXTfTNSLuTACnC8fp72a9MyIe3lC5Y4g89I0LX01LP0OL1z4fnvcjU-zB6eO38EfA_uo1eZdBjJ0NqgTtTzuFSVIfXkmEy8m=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/aIbJn4bUliH0OxLGCXfA8qsBDInPYEQsLhOqWXKG8U7c3bhqvtLbPPMSXWySrKS10Di50IDffEa0NSudtSaye1xSVDGuUJU0p2ME-WmD-f43Js1XH_fWud6gmaJOSvySVNW3M2Yzkv-zJGGHPSQmNElrTFCw1SwCtOpaKyBkS_MuU-X8qNyhpyJmv3CKlRqOt2dEDm1rEziYe-eAp1AHQ2axNglSObdwjWf2wWlCrwnvfwGh8tWpcAICIW6uKnqYewfPfyrnZdScYDgWqenhwbJ_nTjUPkPi1W59HRVgbHIsHeA6fTYeowTWokvEYQW-kFmeLeeSJo-z7G-qfzXRpCJXGrV8HUX7jG5zK1Ey4mnXDEl6s0HTW3T4TgVZZdkKmh7R-vSmKRfup3gE2f4l_PpGUbfs84wc9jIxFOmbdsdIxGkkyW-WGJf2_kyO4WIQhHbi0TqhyhUhoBC2GgU6667lCDyQt1u9X3lUS-VSXsJDrn4iAy993v2w4Nj4wAVNSzVtneIUmHhLroSsqYXc0L752g9JrUUBDJkAqWxlsd4ZFPt4VnekjEbd93_SWY97kMDY_UN0Eb_bQiYIJqWqNx37-AIow-GfsZWhHCYxDFXXZxW6LkKOCrho2Snz1eyFXanaHc-bcFYwGGtfvsz7TfflBMEV044h=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/JbgCW6ATmMsAhvFQROTnn_r06f0M6tDx4Nv74-CJfHKiRe9ENbmm819xfiQBpl2s4KfloDeVVIaFtgvCuzkQVTtkkbZeCQwsTHSclKbkouhCBJnifLliEigeFdtblLVGflZrw4OiJ6A0kclpJ7AvoESjuG_QgFPzFFM7tHF1aQEkHcbElvsEUKkoccdzo2G6ZeKnWDMPsZZRnRfSWeMpyA4OgBXO311OZk_0NpVHPXL3vFeuWi4QR7kHFrfvMG__N7EYRDKQE7lfB3ipiWo79lBQZecCMaOcsRonKSVBLm-4uKfdRfFT9p3TW4WFniWagrpgqQU4QzZTv1xA52XP9GK1s76yszmDj_aMrMj2uqWG3TMJaLnKBAa3dppV-bAE86nCIhsBwMpMQXhPbjKsN6-kbjTcd1RIXh5BjsMs7FhrFVXp9xwxX8_Vtyu8rCgM0Wgvivna-tnv7ZJV4p81R0jOyV4iOAaiZnk7FUfLCGpsM9y1l3sp_6yX9qmmKUTbYp4PzypedkfWPIfetuQLdLkmLLxd0ajuqMCPC67Pe3ULSm8g52y0dmN9CRBHo_WZyHS81oATWlOGWpyosXukCKfbTo0rC7-_I4Fq9pJlsgCZ5GTPN9YUK86tR0o5P6mFVtuPUXcWTZyQsooxluaNCkTX05EHUNTg=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/-GIY_gd0MgBAzVbR2941tnQjCQ2WdlLdqwi_7qMEtH-ogVTQ-4Cfe13kCYk42nQ02xHexOVC1WxuR5svrmuMi9Tq98WSUCEfRSAUZeu6-V4BGcqA9dac5UOhWZCK7HXs-i5my_i3jDC37RdyoVeHnVNpjgYWjShmSZ3wKc45R6gQtpS6jW4Nd4ikqRUdhmyA2J8033WQLfaM6YBKTPsI5mnH-RM-kDkgJEkjQJ8CjwTboCbhRXp4SJHDwMy_-Pxi2XIMBGLo0V2g0T6PZsUkjTsit8YdXWHC9eO51iV2I09dvHDJLTnyN7W0iyvnC0Zd00mSQcWGe8g1RyyiysdC3G4OdOW8QgI572c2Aqxdy_JBP0HbiFI13Z7KJfvxVXLx6XsPiRmKAmrsxoXA8UR1FlT6FsE1Ce3r91yHI-2fgwPdPPVU395l-UhtwbUoh4X0yir1ytPszE9QFuFFiyKKak5vdF3ixTkP0Hq5GQ7ozHeFZCKO75yBqq6JCVz4ZposcpI31QHytBmebw-tWpmj_1gyDZwQ5mnKeTwx8bpEjyWwSECa0hVTVot3GSoW5jiiucwhe3tBD4nHxNIucTuy5QJsPiBuG-yTH4RHhH-NToywJHXZZsmDMI0Baj4E9ZE8uSGFNWSkcZzOQxhbOv9MfGCGOkzMfSYl=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/WhvmhH3LYBsBtrwPTUGzVNA2spC25iCDXvFvmAL0sk4m2f7mRYbtqWDqjypFdlt2xloBLwbjyiSRkDbMrPTDpu93FWeXpVcGED6-uAv-Zi_gvOqK8lL2qdSVPJWAp8CmyIIHNXdUCUGa69CPvGGyGQTq9qXE6wBQHwhUNKEU6rlKjh7Bi5ORuCZhevOnDoz7qfA330p0QNGaqg0-j-O7g9JC6Jxo0CnHo0kztP0_O1fgFncoroKRNXyNLPGX_dOrnqWweCFf1CdHzy-7jzbTjmujjFIAFpu7Zr993bpPdt672348z4AshIjTy0WBrkFkmZEsKoCdR0zcBZ12NJJbRh0iqyp59vzjPJSuqxvCvlL8dXUSh64vPKxv_TT53UFLEcj_pRwXAgbB7iaVtnKQVzRgWVL7GZTuFxc9eXyvndYgrnzgbLp_tRPlvIrSOnxtE5Dx5Wq2Fjmz1T0NYCy6W7U-TbpBED1gjE11543N2q5DbMzlGgCkcPG-fcwf0emTv589nuX_Dtf4Q6mi27VMOrPODa7AgIRiP6QgsqtDmSYSR9IbxvJCKf1FDDZ0avnw1wFVJCxe3ocwyrRYFJJNCn_6fusi2JoP7P39d7hwsOfnpx1aHkQzPxQe-9uVVyGGBiUSEp7Q_X9ndNYxI8q53LJKlRxd5OzF=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/eQDUWbLW2-yWnYNhtn6ciyOXBJjj5MBoMqlRmH4obdKuaLA3K4orwsskrKBoQt7xekqjajQXAdspZtkWRTLCwRUy6BxoTVHOM8f2bCJz76XMez4x9eGToICbxps6ycq_bgwKnk70KZRFcxmvbGmUCfTFrJrCNhLmPw73MpMZjLUULCBN_CFdBYhyFx3wy6k0ubc2m4k4as8KM3LkKsciOj4rD4gQbEj-AAnb3ec0yEuq5xTRDlZEBheQ7tXbuQzEy3mUkx3OL1_FYypQbGduSqrwPCdCzTlYspiapWTPMil4me0DgiE286ASmRr6_PBIcUrDXH3jK9MEjWludeR3-QZT7CN1cYIMWNX-dgoUqyu7nF-TqqiPlTgQPRh_fcbPznTpZ_fbwj9UiMC1ZZeAF8DdREbyTvpsUPiqfbcdoDE0jlco7C-hH_siEUIXjHhqLduGrVJ0wLBQsDrcdiQ58LUmxYy3jhTsFRrPd3DGjuM08NxbyNNaAC5emF3dY-drDd4g-PheW6uaxkAs3xIgfmoI0YzVlsIHD4TrzRBqM8d1o2z1dtSV18eTjzsbhbekTbZxqHozbkZBMCNX_jTtV4z5VoBiDd3HSqw-OIMxdbhXfQUaIOCcH_xTc2Im6wBIv5lejWwALfBNMLHoATiNieZ_arfVfWf7=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/ldnE-1OOjSMv8-hqjIx30CTodHN5liNc7ZcZDiKNBdyXUf7X-W1yrjESwJH8XCpCZqCqVD4dZ6WTgV1DEIGrHeMzE-XYHMRjsZV5AitOFkyo4tgiYSiW0HBD0OUghAASKILXxYXKJ8By8BN_ruXzz5pzDyDGyXJZfkszH8AiXPxLGPLx4IC5U17esQY8nNQTeh1MJd-2BGObzet4siKiLdAzJQnnY9Z1YCSUpMCIk1eYNDmD9jlCgsPyDNW4zITjGd7rHc4kk8bAV73AcRRZGOucLkwNkW-HJStkNL8vmZhnt9EvIU5mlxBwrrsJMK2WMeWNfnXPbNJCeQWCFSDLhgs4rtiJa1oHo6BpzD7sPd1XAhZc4bOrDoYze4YUeeXDCIRtXFAjdiu0EA3WU2CwHWbWibG6QRMsVQ6fMJa_46jZqAK2RA448Hp9NnRDzn3XZzKG-vFDLYuSmekHPXpo-DrI0LvwglcqgIK-E-AWB4amPRyd94_EosZTVjaCiU47hHvqbHiA6R2nKs9YYHwIfzbvAHjA9rA_CDzGYM_7YMgAsVDVKkpJuWQv9vACIuFQWRC6QpYLY7JuwVnsjSFczJ_Q92UvHLlyypK3dF5rFIBeV3vAxHdUF1z_yIyWVjYqJiToK0717WF6jwfIK2pcm0Xn_ROICQkl=w477-h635-no">
+          </div>
+          </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="jornada2016">
+      <h1 style="text-align: center;">Jornada</h1> <h2 style="text-align: center;"><span class="text-primary">2016</span></h2>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 img-fluid" src="https://lh3.googleusercontent.com/wgfTm4ff02IAjQnCBWG0xyN3BOt8qWNZEauccQzfwMdaOYIMA4BMfvvLH8n6i0H3BkRyPnYLJfYv69N_P9Db6UbxmpZKk0rMWgQrwXtlJDZQO0Mgk7nB3k8uOyJxUS0G5Izp4kNpGVzVkI4xgS_kHPrkffVbyaKfzqHnpns8ojujpYnlycRaVWHDJF4vLfgEywp33D71b0BiQFdCQwsbGYvtY7asF5AcDYlTaI4sgQgyWGsanWyrmtfSgBxtBMHJDKDs0yY6j7YW7g4bv-sHHXzEbXYVYpVUMhfiePkWzJIuu6QqDo6_FJI_oxQGLgX-M2taldaXyoHnoFvP7qSAOjULpF0PjaBWB6mPBuMbcAcwMPZT-ANOikFlUsDAlZvcku7H73LCcKP-kimgcy2IyltLqfF5lQn-h6xpKLrbR08qEJM4dc5-u0GWkIIbSQKtRaqgc9_YCIyqBz3ggnmS1Zg4GmU1bT0OF_OIjqFQU2uQzKFXveqptlGi0w6l1julgMiKMFR7rRoWJTNAGz2g5x_ud1dqncQKGtyfuB8i7-AXEQ5ys9IAQhKzmmQrHgHoky1AFfuCZRFdJV8yqJFTe8k88SZRKttmWKHhTSbmMdwbtFq5UQwElFgE_3hhII7rVtSJ32qIxETCM9ZRkZowlOFouUVDkhZS=w847-h635-no">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="https://lh3.googleusercontent.com/62zfF1CADfxjVfSV-Mo_6EnEIvVGcP13R2WH7N4Ua2Fet3Mze1FnnMIIHg6GxNpydgMJaf0GnuFaq9kscL1J7nCI2RJO-UFvEEkgeTWUE2vyZ20T6R-eo36lc9KFNgLIYJk75_ZogHKHnY2Op36X5wOEt7aJNgnx4BHl46b2_7hMCPEhdlADgOUZB2f-yAatXkPwtPJ54vAxblNSh1KI339crwcjTsA7CmqAuoVBOSZVHPAX8N2C3sOiiCBiMoowU99i0SRs2NosaT0xtZ_sDBMdpemM10dXTRpQCTX8FVFO2q0BovHubSqJQPb-DJfK8Q3Ka4YgQXzlEBt7PErW-3SNe4evODXLYGHpuDkW9KnJgyIPnzeMRmBUFIpVlQv0_p2mii0SMBiGm06K1mIvGwICKjB2IWUoY_oX9nYcityj6GnS1pWBb3ag_tomgZND1ku4lGgmuexPVVjOG6yJbySVw8u7740OsW7UT9R1H5Vl85rOoapkHICLPUmv1r9qaUywHlo2-aer0mhvBvBDinVSipY-b-6yiN0zvioXzAjrfwoE0SUEegDsFxdeRhg6GwERAKDwLc6psCDHWtmkUrtuQV_6N2KrxYgRw9Gu6DFby57qo7FHwz1qsHWuwUjWv45OUhH7R_NW2TUepoG5lgmBgXB4x55c=w768-h576-no">
+          </div>
+          </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
   </div>
-</div>
+  <script src="main.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</body>

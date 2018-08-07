@@ -86,10 +86,6 @@ export class ListarJornadaComponent implements OnInit {
       else {
 
         this.jornadas = response.jornadas;
-        this.jornadas.forEach(jornada => {
-          console.log('la jornada es: ' + jornada);
-
-        });
         this.status1 = 'success'
       }
     }, error => {
@@ -101,15 +97,21 @@ export class ListarJornadaComponent implements OnInit {
     });
   }
   updateJornada():void{
-    console.log("jornadaEditada antes de entrar al servicio: "+this.jornadaEditada);
+    console.log("jornadaEditada antes de entrar al servicio: ");
+    console.log(this.jornadaEditada);
     
     this.jornadaService.updateJornada(this.jornadaEditada).subscribe(response =>{
-      this.jornadaReceived = response.jornada;
+      this.jornadaReceived = response.jornadaUpdated;
       if (!this.jornadaReceived || !this.jornadaReceived._id) {
         this.status = 'error'
       }
       else {
+        console.log("jornada devuelta");
+        console.log(this.jornadaReceived);
+        
+        
         this.status = 'success';
+        this.getJornadas();
       }
     },error=>{
       var errorMessage = <any>error;
