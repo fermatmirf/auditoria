@@ -23,13 +23,15 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { JasepitComponent } from './jasepit/jasepit.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
+import { BlablaComponent } from './blabla/blabla.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     JasepitComponent,
-    SobreNosotrosComponent
+    SobreNosotrosComponent,
+    BlablaComponent
   ],
   imports: [
     SimpleSmoothScrollModule,
